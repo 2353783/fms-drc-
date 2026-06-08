@@ -1,0 +1,269 @@
+{
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "offers": "Offers",
+        "jobs": "Jobs",
+        "training": "Trainings",
+        "contact": "Contact",
+        "about": "About Us",
+        "admin": "Administration"
+    },
+    "services_list": {
+        "placement": "Placement",
+        "recruitment": "Recruitment",
+        "training": "Training",
+        "tax": "Tax",
+        "accounting": "Accounting",
+        "immigration": "Immigration",
+        "payroll": "Payroll Management",
+        "performance": "Performance Management",
+        "teambuilding": "Team Building",
+        "audit": "External Audit"
+    },
+    "hero": {
+        "title": "Your Partner for Growth",
+        "subtitle": "Financial Managing Support assists you in all your human resources needs: placement, recruitment, training, tax, accounting, and immigration.",
+        "filter": {
+            "title": "Find your opportunity",
+            "search_placeholder": "Job or training",
+            "profession": "Profession",
+            "location": "Location",
+            "contract": "Contract type",
+            "search_btn": "Search"
+        },
+        "cta_services": "Discover our services",
+        "cta_contact": "Contact us"
+    },
+    "sections": {
+        "our_services": "Our Services",
+        "services_desc": "Comprehensive HR solutions to support your business",
+        "latest_jobs": "Latest Job Offers",
+        "jobs_desc": "Discover the professional opportunities currently available",
+        "latest_training": "Available Trainings",
+        "training_desc": "Develop your skills with our training programs",
+        "learn_more": "Learn more →",
+        "view_details": "View details",
+        "apply_now": "Apply now",
+        "register": "Register",
+        "latest_news": "Latest News & Events",
+        "news_desc": "Stay updated with the latest news from FMS and the HR sector.",
+        "about_us": "About Us",
+        "latest_trainings": "Premier Training Programs",
+        "trainings_desc": "Elevate your professional skills with our expert-led certification courses."
+    },
+    "services_descriptions": {
+        "placement": "We help you find the ideal position matching your skills and professional aspirations.",
+        "recruitment": "Tailored recruitment solutions to identify and attract the best talent for your company.",
+        "training": "Professional training programs to develop your teams' skills.",
+        "tax": "Advice and support in tax matters to optimize your situation.",
+        "accounting": "Comprehensive accounting services for the management and development of your business.",
+        "immigration": "Complete support in your immigration procedures and document acquisition.",
+        "payroll": "Rigorous payroll management and social obligations for your peace of mind.",
+        "performance": "Optimization of individual and collective performance within your organization.",
+        "teambuilding": "Activities and workshops to strengthen cohesion and motivation within your teams.",
+        "audit": "Independent external audits to guarantee the transparency and reliability of your accounts."
+    },
+    "service_details": {
+        "placement": {
+            "title": "Professional Placement",
+            "subtitle": "Your career, our priority",
+            "p1": "FMS accompanies you in your job search with a personalized and efficient placement service. We analyze your profile to offer you the best opportunities.",
+            "feature1": "In-depth profile and goal analysis",
+            "feature2": "Access to a wide network of partner companies",
+            "feature3": "Personalized interview coaching",
+            "feature4": "Post-hire integration follow-up"
+        },
+        "recruitment": {
+            "title": "Talent Recruitment",
+            "subtitle": "Human capital at the service of your growth",
+            "p1": "We identify and select candidates who match not only technical requirements but also your company culture.",
+            "feature1": "Precise definition of recruitment needs",
+            "feature2": "Active sourcing through direct approach and networks",
+            "feature3": "Rigorous evaluation (tests and interviews)",
+            "feature4": "Replacement guarantee in case of failure"
+        },
+        "training": {
+            "title": "Professional Training",
+            "subtitle": "Invest in knowledge for tomorrow",
+            "p1": "FMS offers training modules adapted to market realities to boost your employees' productivity.",
+            "feature1": "Custom training engineering",
+            "feature2": "Expert and certified trainers",
+            "feature3": "Practical and interactive workshops",
+            "feature4": "State-recognized certifications"
+        },
+        "tax": {
+            "title": "Tax Consulting",
+            "subtitle": "Optimization and tax compliance",
+            "p1": "Navigate through tax complexity with our experts who secure your operations.",
+            "feature1": "Complete tax audit and diagnosis",
+            "feature2": "Periodic tax returns",
+            "feature3": "Strategic tax planning",
+            "feature4": "Assistance in case of tax audit"
+        },
+        "accounting": {
+            "title": "Accounting Services",
+            "subtitle": "Drive your financial performance",
+            "p1": "From bookkeeping to management advice, we give you the tools to decide with confidence.",
+            "feature1": "Account maintenance and supervision",
+            "feature2": "Preparation of annual accounts",
+            "feature3": "Financial reporting and dashboards",
+            "feature4": "Management and organization advice"
+        },
+        "immigration": {
+            "title": "Immigration & Mobility",
+            "subtitle": "Facilitate your international procedures",
+            "p1": "We simplify complex procedures to allow your talent to focus on the essentials.",
+            "feature1": "Visa and work permit management",
+            "feature2": "Assistance au regroupement familial",
+            "feature3": "Relocation advice (housing, school)",
+            "feature4": "Legal watch on immigration laws"
+        },
+        "payroll": {
+            "title": "Payroll Management",
+            "subtitle": "Security and social compliance",
+            "p1": "Outsource your payroll to guarantee accurate calculations and compliance with legal deadlines.",
+            "feature1": "Preparation of pay slips",
+            "feature2": "Social and tax declarations",
+            "feature3": "Management of employee entries and exits",
+            "feature4": "Advice on social law and contracts"
+        },
+        "performance": {
+            "title": "Performance Management",
+            "subtitle": "Maximize your teams' potential",
+            "p1": "Define clear indicators and support the development of your talents.",
+            "feature1": "Implementation of evaluation systems",
+            "feature2": "Definition of SMART goals",
+            "feature3": "Individual development plans",
+            "feature4": "Managerial performance coaching"
+        },
+        "teambuilding": {
+            "title": "Team Building",
+            "subtitle": "Strengthen your teams' cohesion",
+            "p1": "Create a strong corporate culture through shared memorable experiences.",
+            "feature1": "Organization of tailor-made events",
+            "feature2": "Interpersonal communication workshops",
+            "feature3": "Fun and strategic activities",
+            "feature4": "Debriefing and anchoring of values"
+        },
+        "audit": {
+            "title": "External Audit",
+            "subtitle": "Transparency and trust",
+            "p1": "Provide reasonable assurance on the fairness of your financial reports.",
+            "feature1": "Statutory audit",
+            "feature2": "Contractual and financial audit",
+            "feature3": "Evaluation of internal control",
+            "feature4": "Review of procedures and risks"
+        }
+    },
+    "stats": {
+        "placements": "Successful placements",
+        "companies": "Partner companies",
+        "trainings": "Trainings delivered",
+        "years": "Years of experience"
+    },
+    "footer": {
+        "description": "Financial Managing Support is your trusted partner for all your human resources needs.",
+        "quick_links": "Quick Links",
+        "our_services": "Our Services",
+        "contact_us": "Contact Us",
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "copyright": "© 2026 FMS - Financial Managing Support. All rights reserved."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "We are here to answer all your questions",
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message",
+        "success": "Message sent successfully!",
+        "error": "An error occurred. Please try again."
+    },
+    "jobs": {
+        "title": "Job Offers",
+        "subtitle": "Find the professional opportunity that matches you",
+        "search_placeholder": "Search for a position...",
+        "filter_location": "Location",
+        "filter_sector": "Sector",
+        "filter_all": "All",
+        "no_results": "No offers found",
+        "location": "Location",
+        "salary": "Salary",
+        "date": "Date",
+        "type": "Type",
+        "expired": "This offer has expired",
+        "expires_on": "Expires on",
+        "apply": "Apply"
+    },
+    "trainings": {
+        "title": "Trainings",
+        "subtitle": "Develop your professional skills",
+        "duration": "Duration",
+        "price": "Price",
+        "level": "Level",
+        "register": "Register",
+        "expired": "Registration closed",
+        "expires_on": "Registration until"
+    },
+    "admin": {
+        "title": "Administration",
+        "dashboard": "Dashboard",
+        "manage_jobs": "Manage Jobs",
+        "manage_trainings": "Manage Trainings",
+        "add_new": "Add New",
+        "edit": "Edit",
+        "delete": "Delete",
+        "save": "Save",
+        "cancel": "Cancel",
+        "confirm_delete": "Are you sure you want to delete this item?",
+        "status": "Status",
+        "active": "Active",
+        "inactive": "Inactive"
+    },
+    "news": {
+        "title": "News & Events",
+        "more_news": "More news",
+        "sample_1_title": "FMS at the Recruitment Fair",
+        "sample_1_text": "Join us at the next career fair to discuss your future. Our experts will be there to advise you.",
+        "sample_1_content": "The fair will take place at the Palais du Peuple from March 15 to 17. This is the ideal opportunity to meet our recruiters directly and discover exclusive offers not yet on the site.",
+        "sample_2_title": "New Training Modules Available",
+        "sample_2_text": "Discover our new training modules in management and finance. Register now for the next sessions.",
+        "sample_2_content": "In response to growing demand, FMS is launching two new training cycles: 'Mastering OHADA Taxation' and 'Agile Project Management'. These trainings are eligible for funding by ONEM.",
+        "sample_3_title": "Strategic Partnership",
+        "sample_3_text": "FMS strengthens its presence with new international partners for better mobility.",
+        "sample_3_content": "We are proud to announce a new agreement with recruitment agencies based in Canada and France, thus facilitating immigration processes for qualified workers from the DRC."
+    },
+    "about": {
+        "title": "Who Are We?",
+        "subtitle": "Your Strategic Partner in Human Capital",
+        "description": "We are a simplified joint-stock company (SAS) specialized in supporting both private and public entities in the fields of human resources, professional recruitment, professional training, finance, taxation, company setup in Congo, and corporate organization...",
+        "history_title": "History",
+        "history_text": "Financial Managing Support is a simplified joint-stock company (SAS) that stands out as a strategic partner. Since our founding in 2018, we have built strong ties with our clients across the DRC and internationally, helping them transform their challenges into opportunities. We firmly believe that every company is unique. That is why our solutions are fully customized to meet the specific needs of our clients. By optimizing the efficiency of their teams, we allow them to focus on what really matters: their core business.",
+        "mission_title": "Our Mission",
+        "mission_text": "Our mission is to turn your management challenges into our performance lever. Whether through taxation, finance, human resources, or many other fields, our human approach and expertise allow us to build partnerships of trust, thus contributing to the lasting success of every company we support.",
+        "vision_title": "Our Vision",
+        "vision_text": "To be the Pan-African leader in HR consulting, recognized for its excellence, integrity, and innovation capacity.",
+        "values_title": "Our Values",
+        "value1_title": "Professionalism",
+        "value1_text": "Exemplary rigor and specialized expertise in all our interventions.",
+        "value2_title": "Ethics",
+        "value2_text": "Irreproachable moral conduct and strict adherence to professional standards.",
+        "value3_title": "Confidentiality",
+        "value3_text": "Absolute protection of information and interests of our clients and partners.",
+        "stats": {
+            "projects": "2K",
+            "projects_label": "Projects Completed",
+            "years": "7+",
+            "years_label": "Years of experience",
+            "clients": "15+",
+            "clients_label": "Satisfied clients",
+            "agents": "1000+",
+            "agents_label": "Professional agents"
+        }
+    }
+}

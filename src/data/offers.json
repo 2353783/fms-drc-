@@ -1,0 +1,107 @@
+{
+    "jobs": [
+        {
+            "title": {
+                "fr": "IT Assistant",
+                "en": "IT Support",
+                "zh": "",
+                "es": ""
+            },
+            "description": {
+                "fr": "Assister le Directeur Informatique dans la gestion du bon fonctionnement du parc informatique de la société Midema et des sociétés apparentées.",
+                "en": "",
+                "zh": "",
+                "es": ""
+            },
+            "image": "/uploads/1769528004725-AFFICHE-OFFRE-FMS-IT-ASSISTANT.jpg",
+            "active": true,
+            "company": "Financial Managing Support",
+            "location": "Kinshasa",
+            "type": "CDI",
+            "salary": "1000$ - 1500$",
+            "sector": "",
+            "publishDate": "2026-01-27",
+            "expirationDate": "2026-02-06",
+            "expirationTime": "12:00",
+            "id": 1
+        }
+    ],
+    "trainings": [
+        {
+            "title": {
+                "fr": "Formation : conformité douanière",
+                "en": "Training: Customs Compliance",
+                "zh": "",
+                "es": ""
+            },
+            "description": {
+                "fr": "Maîtrisez la conformité douanière. Protégez votre activité.\n\nDans un environnement où les contrôles de la DGI, de la DGRAD et des autres régies financières deviennent de plus en plus stricts, la moindre erreur de déclaration, de classement ou de procédure peut entraîner des amendes lourdes, des blocages de marchandises ou des pertes financières importantes.\n",
+                "en": "",
+                "zh": "",
+                "es": ""
+            },
+            "image": "/uploads/1769533051904-affiche-douane.jpg",
+            "active": true,
+            "duration": "3 Heures",
+            "price": "Inscription 20$  &  Participation 200$",
+            "level": {
+                "fr": "",
+                "en": "",
+                "zh": "",
+                "es": ""
+            },
+            "publishDate": "2026-01-27",
+            "expirationDate": "2026-02-13",
+            "expirationTime": "19:30",
+            "id": 1
+        },
+        {
+            "title": {
+                "fr": "Formation : HRBP : Piloter la Performance & l’Excellence Opérationnelle.",
+                "en": "Training: HRBP: Driving Performance & Operational Excellence.",
+                "zh": "",
+                "es": ""
+            },
+            "description": {
+                "fr": "Financial Managing Support vous invite à sa formation exclusive :\n\nHRBP : Piloter la Performance & l’Excellence Opérationnelle.\nQue vous soyez responsable RH, manager ou aspirant HRBP, rejoignez-nous pour transformer votre vision des RH et maximiser votre impact au sein de votre organisation.",
+                "en": "",
+                "zh": "",
+                "es": ""
+            },
+            "image": "/uploads/1769533367222-FORMATION-RH-1.jpg",
+            "active": true,
+            "duration": "3 Heures",
+            "price": "Inscription 15$ & Participation 120$",
+            "level": {
+                "fr": "",
+                "en": "",
+                "zh": "",
+                "es": ""
+            },
+            "publishDate": "2026-01-27",
+            "expirationDate": "2026-02-20",
+            "expirationTime": "19:30",
+            "id": 2
+        }
+    ],
+    "news": [
+        {
+            "title": {
+                "fr": "",
+                "en": "",
+                "zh": "",
+                "es": ""
+            },
+            "description": {
+                "fr": "",
+                "en": "",
+                "zh": "",
+                "es": ""
+            },
+            "image": "/uploads/1769533884397-AFFICHE-MOTIVATION-FMS.jpg",
+            "active": true,
+            "date": "2026-01-27",
+            "id": 1
+        }
+    ]
+}

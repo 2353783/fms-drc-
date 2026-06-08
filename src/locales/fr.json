@@ -1,0 +1,267 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "services": "Services",
+        "offers": "Offres",
+        "jobs": "Emplois",
+        "training": "Formations",
+        "contact": "Contact",
+        "about": "À propos",
+        "admin": "Administration"
+    },
+    "services_list": {
+        "placement": "Placement",
+        "recruitment": "Recrutement",
+        "training": "Formation",
+        "tax": "Fiscalité",
+        "accounting": "Comptabilité",
+        "immigration": "Immigration",
+        "payroll": "Gestion de paie",
+        "performance": "Gestion de performance",
+        "teambuilding": "Team building",
+        "audit": "Audit externe"
+    },
+    "hero": {
+        "title": "Partenaire de Croissance",
+        "subtitle": "Financial Managing Support est un cabinet de conseil en Ressources Humaines et en Finance, dédié à l’accompagnement des organisations dans l’atteinte de leurs objectifs.",
+        "filter": {
+            "title": "Trouvez votre opportunité",
+            "search_placeholder": "Poste ou formation",
+            "profession": "Métier",
+            "location": "Localisation",
+            "contract": "Type de contrat",
+            "search_btn": "Rechercher"
+        },
+        "cta_services": "Découvrir nos services",
+        "cta_contact": "Nous contacter"
+    },
+    "sections": {
+        "our_services": "Nos Services",
+        "services_desc": "Nos solutions sur mesure pour accompagner vos entreprises",
+        "about_us": "Qui sommes-nous ?",
+        "latest_jobs": "Dernières Offres d'Emploi",
+        "jobs_desc": "Découvrez les opportunités professionnelles actuellement disponibles",
+        "latest_trainings": "Formations d'Excellence",
+        "trainings_desc": "Propulsez votre carrière avec nos programmes de formation certifiants et nos experts métiers.",
+        "learn_more": "En savoir plus →",
+        "view_details": "Voir les détails",
+        "apply_now": "Postuler maintenant",
+        "register": "S'inscrire",
+        "latest_news": "Actualités & Galerie",
+        "news_desc": "Suivez les dernières nouvelles et activités de FMS"
+    },
+    "services_descriptions": {
+        "placement": "Nous sommes spécialisés dans le placement de talents en reliant des agents qualifiés à des entreprises.",
+        "recruitment": "Solutions de recrutement sur mesure pour identifier et attirer les meilleurs talents pour votre entreprise.",
+        "training": "Programmes de formation professionnelle pour développer les compétences de vos équipes.",
+        "tax": "Conseil et accompagnement en matière de fiscalité pour optimiser votre situation.",
+        "accounting": "Services comptables complets pour la gestion et le développement de votre activité.",
+        "immigration": "Accompagnement complet dans vos démarches d'immigration et obtention de documents.",
+        "payroll": "Gestion rigoureuse de la paie et des obligations sociales pour votre sérénité.",
+        "performance": "Optimisation de la performance individuelle et collective au sein de votre organisation.",
+        "teambuilding": "Activités et ateliers pour renforcer la cohésion et la motivation de vos équipes.",
+        "audit": "Audits externes indépendants pour garantir la transparence et la fiabilité de vos comptes."
+    },
+    "service_details": {
+        "placement": {
+            "title": "Placement Professionnel",
+            "subtitle": "Votre carrière, notre priorité",
+            "p1": "Couverture nationale : FMS intervient sur l’ensemble de la RDC, assurant un service fiable et homogène partout.\n\nNotre rôle n'est pas seulement de combler un vide, mais de devenir le prolongement de votre propre vision. Nous créons des collaborations durables en sélectionnant des agents fiables, parfaitement alignés avec votre culture d'entreprise.\n\nPour votre totale sérénité, nous garantissons une gestion rigoureuse et strictement conforme au cadre légal. Nous prenons en charge l'ensemble des obligations réglementaires liées au placement, vous offrant ainsi un partenariat sécurisé et une tranquillité d'esprit absolue pour vous concentrer sur votre croissance.",
+            "feature1": "Analyse approfondie du profil et des objectifs",
+            "feature2": "Accès à un large réseau d'entreprises partenaires",
+            "feature3": "Coaching personnalisé pour les entretiens",
+            "feature4": "Suivi d'intégration après embauche"
+        },
+        "recruitment": {
+            "title": "Recrutement de Talents",
+            "subtitle": "Le capital humain au service de votre croissance",
+            "p1": "Chez FMS, notre service Recrutement accompagne les entreprises dans la recherche des meilleurs talents, du personnel opérationnel aux cadres de direction.\n\nNous combinons méthodes classiques et chasse de tête pour identifier des profils stratégiques et rares, tout en respectant scrupuleusement les délais de recrutement fixés par nos clients.\n\nNotre approche reste toujours humaine, personnalisée et orientée résultats.",
+            "feature1": "Définition précise des besoins en recrutement",
+            "feature2": "Sourcing actif par approche directe et réseaux",
+            "feature3": "Évaluation rigoureuse (tests et entretiens)",
+            "feature4": "Garantie de remplacement en cas d'échec"
+        },
+        "training": {
+            "title": "Formation Professionnelle",
+            "subtitle": "Investissez dans le savoir pour demain",
+            "p1": "Chez FMS, nous proposons des formations sur mesure pour les entreprises ainsi que des sessions de formation de masse.\n\nNos formateurs compétents et qualifiés apportent un savoir-faire concret et pratique, garantissant un apprentissage efficace et directement applicable.\n\nNous accompagnons ainsi le développement des compétences des équipes, tout en contribuant à la performance et à la croissance des entreprises.",
+            "feature1": "Ingénierie de formation sur mesure",
+            "feature2": "Formateurs experts et certifiés",
+            "feature3": "Ateliers pratiques et interactifs",
+            "feature4": "Certifications reconnues par l'État"
+        },
+        "tax": {
+            "title": "Conseil Fiscal",
+            "subtitle": "Optimisation et conformité fiscale",
+            "p1": "Naviguez sereinement dans la complexité fiscale avec nos experts qui sécurisent vos opérations.",
+            "feature1": "Audit et diagnostic fiscal complet",
+            "feature2": "Déclarations fiscales périodiques",
+            "feature3": "Planification fiscale stratégique",
+            "feature4": "Assistance en cas de contrôle fiscal"
+        },
+        "accounting": {
+            "title": "Services Comptables",
+            "subtitle": "Pilotez votre performance financière",
+            "p1": "Externaliser votre comptabilité, c’est confier la gestion financière de votre entreprise à des experts, garantir la fiabilité des chiffres, optimiser vos coûts et vous concentrer pleinement sur votre cœur de métier.\n\nNous transformons votre comptabilité en un véritable outil de pilotage. Bien plus qu'une simple saisie de chiffres, notre service assure une organisation rigoureuse de vos flux financiers et un suivi précis de vos résultats. Nous veillons à ce que chaque mouvement soit enregistré avec exactitude pour vous offrir une vision claire et en temps réel de votre situation financière.",
+            "feature1": "Tenue et surveillance comptable",
+            "feature2": "Établissement des comptes annuels",
+            "feature3": "Reporting financier et tableaux de bord",
+            "feature4": "Conseils en gestion et organisation"
+        },
+        "immigration": {
+            "title": "Immigration & Mobilité",
+            "subtitle": "Facilitez vos démarches internationales",
+            "p1": "Externaliser votre service d’immigration à FMS vous permet de sécuriser vos démarches légales, de gagner du temps, de réduire les risques d’erreurs et d’assurer une conformité totale avec la réglementation en vigueur.\n\nNous transformons les démarches administratives complexes en un parcours fluide pour vos talents internationaux. Notre service prend en charge l'intégralité des procédures, des visas aux permis de travail, pour garantir une installation rapide de vos collaborateurs, le tout en toute légalité.\n\nGrâce à notre expertise des lois sur l'immigration, nous sécurisons chaque étape du dossier pour vous éviter tout risque ou retard. Nous vous offrons une tranquillité d'esprit totale en assurant une conformité rigoureuse avec les règles en vigueur, vous permettant d'intégrer vos recrues étrangères en toute confiance.",
+            "feature1": "Gestion des visas et permis de travail",
+            "feature2": "Assistance au regroupement familial",
+            "feature3": "Conseils en relocalisation (logement, école)",
+            "feature4": "Veille juridique sur les lois d'immigration"
+        },
+        "payroll": {
+            "title": "Gestion de Paie",
+            "subtitle": "Sécurité et conformité sociale",
+            "p1": "Externalisez votre paie pour garantir l'exactitude des calculs et le respect des délais légaux.",
+            "feature1": "Établissement des bulletins de paie",
+            "feature2": "Déclarations sociales et fiscales",
+            "feature3": "Gestion des entrées et sorties de personnel",
+            "feature4": "Conseil en droit social et contrats"
+        },
+        "performance": {
+            "title": "Gestion de Performance",
+            "subtitle": "Maximisez le potentiel de vos équipes",
+            "p1": "Définissez des indicateurs clairs et accompagnez le développement de vos talents.",
+            "feature1": "Mise en place de systèmes d'évaluation",
+            "feature2": "Définition d'objectifs SMART",
+            "feature3": "Plans de développement individuels",
+            "feature4": "Coaching de performance managériale"
+        },
+        "teambuilding": {
+            "title": "Team Building",
+            "subtitle": "Renforcez la cohésion de vos équipes",
+            "p1": "Créez une culture d'entreprise forte à travers des expériences partagées mémorables.",
+            "feature1": "Organisation d'événements sur mesure",
+            "feature2": "Ateliers de communication interpersonnelle",
+            "feature3": "Activités ludiques et stratégiques",
+            "feature4": "Débriefing et ancrage des valeurs"
+        },
+        "audit": {
+            "title": "Audit Externe",
+            "subtitle": "Transparence et confiance",
+            "p1": "Apportez une assurance raisonnable sur la fidélité de vos rapports financiers.",
+            "feature1": "Commissariat aux comptes",
+            "feature2": "Audit contractuel et financier",
+            "feature3": "Évaluation du contrôle interne",
+            "feature4": "Revue des procédures et risques"
+        }
+    },
+    "stats": {
+        "placements": "Placements réussis",
+        "companies": "Entreprises partenaires",
+        "trainings": "Formations dispensées",
+        "years": "Années d'expérience"
+    },
+    "footer": {
+        "description": "Financial Managing Support est votre partenaire de confiance pour tous vos besoins en ressources humaines.",
+        "quick_links": "Liens Rapides",
+        "our_services": "Nos Services",
+        "contact_us": "Contactez-nous",
+        "address": "Adresse",
+        "phone": "Téléphone",
+        "email": "Email",
+        "copyright": "© 2026 FMS - Financial Managing Support. Tous droits réservés."
+    },
+    "contact": {
+        "title": "Contactez-nous",
+        "subtitle": "Nous sommes là pour répondre à toutes vos questions",
+        "name": "Nom complet",
+        "email": "Adresse email",
+        "phone": "Téléphone",
+        "subject": "Sujet",
+        "message": "Message",
+        "send": "Envoyer le message",
+        "success": "Message envoyé avec succès!",
+        "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "jobs": {
+        "title": "Offres d'Emploi",
+        "subtitle": "Trouvez l'opportunité professionnelle qui vous correspond",
+        "search_placeholder": "Rechercher un poste...",
+        "filter_location": "Lieu",
+        "filter_sector": "Secteur",
+        "filter_all": "Tous",
+        "no_results": "Aucune offre trouvée",
+        "location": "Lieu",
+        "salary": "Salaire",
+        "date": "Date",
+        "type": "Type",
+        "expired": "Cette offre a expiré",
+        "expires_on": "Expire le",
+        "apply": "Postuler"
+    },
+    "trainings": {
+        "title": "Formations",
+        "subtitle": "Développez vos compétences professionnelles",
+        "duration": "Durée",
+        "price": "Prix",
+        "level": "Niveau",
+        "register": "S'inscrire",
+        "expired": "Inscription terminée",
+        "expires_on": "Inscriptions jusqu'au"
+    },
+    "admin": {
+        "title": "Administration",
+        "dashboard": "Tableau de bord",
+        "manage_jobs": "Gérer les emplois",
+        "manage_trainings": "Gérer les formations",
+        "add_new": "Ajouter nouveau",
+        "edit": "Modifier",
+        "delete": "Supprimer",
+        "save": "Enregistrer",
+        "cancel": "Annuler",
+        "confirm_delete": "Êtes-vous sûr de vouloir supprimer cet élément?",
+        "status": "Statut",
+        "active": "Actif",
+        "inactive": "Inactif"
+    },
+    "news": {
+        "title": "Actualités & Événements",
+        "more_news": "Plus d'actualités",
+        "sample_1_title": "FMS au Salon du Recrutement",
+        "sample_1_text": "Retrouvez-nous au prochain salon de l'emploi pour discuter de votre avenir. Nos experts seront là pour vous conseiller.",
+        "sample_1_content": "Le salon aura lieu au Palais du Peuple du 15 au 17 Mars. C'est l'occasion idéale de rencontrer directement nos recruteurs et de découvrir des offres exclusives qui ne sont pas encore sur le site.",
+        "sample_2_title": "Nouvelles Formations Disponibles",
+        "sample_2_text": "Découvrez nos nouveaux modules de formation en gestion et finance. Inscrivez-vous dès maintenant pour les prochaines sessions.",
+        "sample_2_content": "Face à la demande croissante, FMS lance deux nouveaux cycles de formation : 'Maîtrise de la Fiscalité OHADA' et 'Management de Projets Agiles'. Ces formations sont éligibles au financement par l'ONEM.",
+        "sample_3_title": "Partenariat Stratégique",
+        "sample_3_text": "FMS renforce sa présence avec de nouveaux partenaires internationaux pour une meilleure mobilité.",
+        "sample_3_content": "Nous sommes fiers d'annoncer un nouvel accord avec des agences de recrutement basées au Canada et en France, facilitant ainsi les processus d'immigration pour les travailleurs qualifiés de la RDC."
+    },
+    "about": {
+        "title": "Qui sommes-nous ?",
+        "subtitle": "Partenaire de croissance",
+        "description": "Nous sommes une Société par Actions Simplifiée (SAS) spécialisée en conseil en Ressources Humaines et en Finance, engagée aux côtés des entreprises pour optimiser leur performance.\n\nNous accompagnons nos partenaires dans la gestion et la structuration de leurs missions, en apportant des solutions concrètes, adaptées à leurs réalités opérationnelles.\n\nNous appuyons également les entreprises dans leur installation en République Démocratique du Congo, de la conception stratégique à la mise en œuvre, pour des résultats durables.",
+        "history_title": "Historique",
+        "history_text": "Financial Managing Support est une société par actions simplifiée (SAS) qui se démarque en tant que partenaire stratégique. Depuis notre fondation en 2018, nous avons su tisser des liens solides avec nos clients à travers la RDC et à l’international, en les aidant à transformer leurs défis en opportunités. Nous croyons fermement que chaque entreprise est unique. C’est pourquoi nos solutions sont entièrement personnalisées pour répondre aux besoins spécifiques de nos clients. En optimisant l’efficacité de leurs équipes, nous leur permettons de se concentrer sur ce qui compte vraiment : leur cœur de métier.",
+        "mission_title": "Notre Mission",
+        "mission_text": "Notre mission consiste à faire de vos défis de gestion notre levier de performance. Que ce soit à travers la fiscalité, la finance en passant par les ressources humaines et tant d'autres domaines. notre approche humaine et notre expertise nous permettent de bâtir des partenariats de confiance, contribuant ainsi au succès durable de chaque entreprise que nous accompagnons.",
+        "vision_title": "Notre Vision",
+        "vision_text": "Être le leader panafricain du conseil RH, reconnu pour son excellence, son intégrité et sa capacité d'innovation.",
+        "values_title": "Nos Valeurs",
+        "value1_title": "Professionnalisme",
+        "value1_text": "Une rigueur exemplaire et une expertise pointue dans l'ensemble de nos interventions.",
+        "value2_title": "Éthique",
+        "value2_text": "Une conduite morale irréprochable et un respect strict des normes professionnelles.",
+        "value3_title": "Confidentialité",
+        "value3_text": "Une protection absolue des informations et des intérêts de nos clients et partenaires.",
+        "stats": {
+            "projects": "2K",
+            "projects_label": "Projets Complétés",
+            "years": "7+",
+            "years_label": "Années d'expérience",
+            "clients": "15+",
+            "clients_label": "Clients satisfaits",
+            "agents": "1000+",
+            "agents_label": "Agents professionnels"
+        }
+    }
+}
