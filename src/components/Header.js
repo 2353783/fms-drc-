@@ -47,7 +47,7 @@ export default function Header() {
                         <li>
                             <Link href="/a-propos">{t('nav.about')}</Link>
                         </li>
-                        <li className="nav-dropdown">
+                        <li className={`nav-dropdown ${servicesOpen ? 'open' : ''}`}>
                             <a
                                 href="#"
                                 onClick={(e) => {

@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero mesh-bg" style={{
+      <section className="hero mesh-bg home-hero" style={{
         padding: '14rem 0 12rem',
         position: 'relative',
         overflow: 'hidden',
@@ -35,8 +35,8 @@ export default function Home() {
         <div className="shape-2 floating-shape" style={{ opacity: 0.15, width: '500px', height: '500px', bottom: '-5%', left: '-5%', background: '#3b82f6', filter: 'blur(80px)' }}></div>
 
         <div className="container relative z-10">
-          <div className="hero-content" style={{ maxWidth: '1100px' }}>
-            <h1 className="animate-fadeInUp" style={{
+          <div className="hero-content home-hero-content" style={{ maxWidth: '1100px' }}>
+            <h1 className="animate-fadeInUp home-hero-title" style={{
               fontSize: '5rem',
               fontWeight: '900',
               lineHeight: '1',
@@ -46,7 +46,7 @@ export default function Home() {
             }}>
               {t('hero.title').split(' ').map((word, i) => i > 1 ? <span key={i} className="gradient-text-light animate-shine">{word} </span> : word + ' ')}
             </h1>
-            <p className="animate-fadeInUp animate-delay-1" style={{
+            <p className="animate-fadeInUp animate-delay-1 home-hero-subtitle" style={{
               fontSize: '1.5rem',
               maxWidth: '800px',
               color: 'rgba(255, 255, 255, 0.8)',
@@ -59,7 +59,7 @@ export default function Home() {
 
             {/* Elite Integrated Search Bar */}
             <div className="animate-fadeInUp animate-delay-2" style={{ marginBottom: '5rem' }}>
-              <div className="glass-card-deep" style={{
+              <div className="glass-card-deep home-search-panel" style={{
                 padding: '0.75rem',
                 borderRadius: '100px',
                 maxWidth: '950px'
@@ -73,7 +73,7 @@ export default function Home() {
                     gap: '0.25rem'
                   }}
                 >
-                  <div style={{ flex: '1.5', minWidth: '220px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
+                  <div className="home-search-field" style={{ flex: '1.5', minWidth: '220px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
                     <label style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>{t('hero.filter.search_placeholder')}</label>
                     <input
                       type="text"
@@ -92,9 +92,9 @@ export default function Home() {
                     />
                   </div>
 
-                  <div style={{ width: '1px', height: '35px', background: 'rgba(255,255,255,0.1)', display: 'block' }}></div>
+                  <div className="home-search-divider" style={{ width: '1px', height: '35px', background: 'rgba(255,255,255,0.1)', display: 'block' }}></div>
 
-                  <div style={{ flex: '1', minWidth: '160px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
+                  <div className="home-search-field" style={{ flex: '1', minWidth: '160px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
                     <label style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>{t('hero.filter.profession')}</label>
                     <select className="select-elite" style={{ background: 'transparent', border: 'none', color: 'white', padding: '0', fontSize: '1rem', outline: 'none', cursor: 'pointer', fontWeight: '500' }}>
                       <option value="" style={{ color: 'black' }}>{t('hero.filter.profession')}</option>
@@ -104,9 +104,9 @@ export default function Home() {
                     </select>
                   </div>
 
-                  <div style={{ width: '1px', height: '35px', background: 'rgba(255,255,255,0.1)', display: 'block' }}></div>
+                  <div className="home-search-divider" style={{ width: '1px', height: '35px', background: 'rgba(255,255,255,0.1)', display: 'block' }}></div>
 
-                  <div style={{ flex: '1', minWidth: '160px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
+                  <div className="home-search-field" style={{ flex: '1', minWidth: '160px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
                     <label style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>{t('hero.filter.location')}</label>
                     <select className="select-elite" style={{ background: 'transparent', border: 'none', color: 'white', padding: '0', fontSize: '1rem', outline: 'none', cursor: 'pointer', fontWeight: '500' }}>
                       <option value="" style={{ color: 'black' }}>{t('hero.filter.location')}</option>
@@ -116,7 +116,7 @@ export default function Home() {
                     </select>
                   </div>
 
-                  <button type="submit" className="btn btn-primary pulse" style={{
+                  <button type="submit" className="btn btn-primary pulse home-search-submit" style={{
                     borderRadius: '100px',
                     padding: '1.1rem 2.8rem',
                     fontSize: '1rem',
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-buttons animate-fadeInUp animate-delay-3" style={{ display: 'flex', gap: '2rem' }}>
+            <div className="hero-buttons animate-fadeInUp animate-delay-3 home-hero-actions" style={{ display: 'flex', gap: '2rem' }}>
               <Link href="/services/placement" className="btn btn-primary" style={{ padding: '1.2rem 3rem', borderRadius: '100px', fontSize: '1rem', fontWeight: '700' }}>
                 {t('hero.cta_services')}
               </Link>
@@ -152,11 +152,11 @@ export default function Home() {
       </section>
 
       {/* Magazine-style About Section */}
-      <section className="about-magazine" style={{ padding: '10rem 0', background: 'white', position: 'relative' }}>
+      <section className="about-magazine home-section" style={{ padding: '10rem 0', background: 'white', position: 'relative' }}>
         <div className="container">
-          <div className="zigzag-row" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.1fr)', gap: '6rem', alignItems: 'center' }}>
+          <div className="zigzag-row home-about-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.1fr)', gap: '6rem', alignItems: 'center' }}>
             <div className="magazine-image-wrap animate-fadeInLeft">
-              <div className="magazine-image-main" style={{
+              <div className="magazine-image-main home-about-image" style={{
                 position: 'relative',
                 borderRadius: '2.5rem',
                 overflow: 'hidden',
@@ -167,7 +167,7 @@ export default function Home() {
                   alt="About FMS Executive"
                   style={{ width: '100%', height: '600px', objectFit: 'cover', display: 'block' }}
                 />
-                <div style={{
+                <div className="home-about-badge" style={{
                   position: 'absolute',
                   bottom: '2.5rem',
                   right: '2.5rem',
@@ -195,7 +195,7 @@ export default function Home() {
                   {t('sections.about_us')}
                 </span>
               </div>
-              <h2 className="gradient-text" style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '2.5rem' }}>
+              <h2 className="gradient-text home-section-title" style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '2.5rem' }}>
                 {t('about.subtitle')}
               </h2>
               <div style={{ marginBottom: '3rem' }}>
@@ -222,14 +222,14 @@ export default function Home() {
       </section>
 
       {/* Services Section with Soft Curve */}
-      <section className="services" style={{
+      <section className="services home-section" style={{
         padding: '10rem 0',
         background: 'var(--slate-50)',
         position: 'relative'
       }}>
         <div className="container">
           <div className="section-header" style={{ marginBottom: '6rem', textAlign: 'center' }}>
-            <h2 className="gradient-text" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.our_services')}</h2>
+            <h2 className="gradient-text home-section-title" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.our_services')}</h2>
             <p style={{ fontSize: '1.2rem', marginTop: '1rem', textAlign: 'center', margin: '1rem auto 0' }}>{t('sections.services_desc')}</p>
           </div>
           <div className="services-grid">
@@ -246,10 +246,10 @@ export default function Home() {
       </section>
 
       {/* Job Offers Overlapping Section */}
-      <section className="offers" style={{ padding: '10rem 0', background: 'white' }}>
+      <section className="offers home-section" style={{ padding: '10rem 0', background: 'white' }}>
         <div className="container">
           <div className="section-header" style={{ marginBottom: '6rem', textAlign: 'center' }}>
-            <h2 className="gradient-text" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.latest_jobs')}</h2>
+            <h2 className="gradient-text home-section-title" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.latest_jobs')}</h2>
             <p style={{ fontSize: '1.2rem', marginTop: '1rem', textAlign: 'center', margin: '1rem auto 0' }}>{t('sections.jobs_desc')}</p>
           </div>
           <div className="offers-grid">
@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* Elite Trainings Section */}
-      <section className="trainings mesh-bg" style={{
+      <section className="trainings mesh-bg home-section" style={{
         padding: '12rem 0',
         position: 'relative',
         overflow: 'hidden'
@@ -276,7 +276,7 @@ export default function Home() {
 
         <div className="container relative z-10">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '6rem' }}>
-            <h2 className="gradient-text-light animate-shine" style={{ fontSize: '3.5rem', fontWeight: '800' }}>{t('sections.latest_trainings')}</h2>
+            <h2 className="gradient-text-light animate-shine home-section-title" style={{ fontSize: '3.5rem', fontWeight: '800' }}>{t('sections.latest_trainings')}</h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.2rem', marginTop: '1.5rem', textAlign: 'center', margin: '1.5rem auto 0' }}>{t('sections.trainings_desc')}</p>
           </div>
           <div className="trainings-grid">
@@ -293,7 +293,7 @@ export default function Home() {
       </section>
 
       {/* Floating Glass Stats Section */}
-      <section className="stats-elite" style={{
+      <section className="stats-elite home-stats-section" style={{
         padding: '4rem 0',
         background: '#0f172a',
         position: 'relative',
@@ -311,7 +311,7 @@ export default function Home() {
               { val: '15+', label: t('about.stats.clients_label'), icon: '🏆' },
               { val: '1000+', label: t('about.stats.agents_label'), icon: '👥' }
             ].map((stat, i) => (
-              <div key={i} className="glass-card-deep animate-fadeInUp" style={{
+              <div key={i} className="glass-card-deep animate-fadeInUp home-stat-card" style={{
                 padding: '2.5rem',
                 borderRadius: '2rem',
                 textAlign: 'center',
@@ -327,10 +327,10 @@ export default function Home() {
       </section>
 
       {/* Actualités & Galerie with refined layout */}
-      <section className="news" style={{ padding: '10rem 0', background: 'var(--slate-50)' }}>
+      <section className="news home-section" style={{ padding: '10rem 0', background: 'var(--slate-50)' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '6rem' }}>
-            <h2 className="gradient-text" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.latest_news')}</h2>
+            <h2 className="gradient-text home-section-title" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.latest_news')}</h2>
             <p style={{ fontSize: '1.2rem', marginTop: '1rem', textAlign: 'center', margin: '1rem auto 0' }}>{t('sections.news_desc')}</p>
           </div>
           <div className="news-grid" style={{ maxWidth: '1200px', margin: '0 auto' }}>
