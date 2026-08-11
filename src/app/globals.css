@@ -224,6 +224,8 @@ a:hover {
 .nav-logo img {
   height: 50px;
   width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav-logo span {

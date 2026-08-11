@@ -43,9 +43,16 @@ export default function Header() {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <nav className="nav">
-                    <Link href="/" className="nav-logo" onClick={closeMenus}>
-                        <Image src="/logo.png" alt="FMS Logo" width={55} height={55} />
-                        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
+                    <Link href="/" className="nav-logo" onClick={closeMenus} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+                        <Image 
+                            src="/logo.png" 
+                            alt="FMS Logo" 
+                            width={55} 
+                            height={55} 
+                            style={{ objectFit: 'contain', height: '50px', width: 'auto', flexShrink: 0 }}
+                            priority
+                        />
+                        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.1' }}>
                             <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary-blue)', letterSpacing: '-0.02em' }}>FMS</span>
                             <span style={{ fontSize: '0.7rem', fontWeight: '600', color: 'var(--gray-medium)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                 Financial Managing Support
@@ -54,6 +61,15 @@ export default function Header() {
                     </Link>
 
                     <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+                        {mobileMenuOpen && (
+                            <li style={{ paddingBottom: '0.75rem', marginBottom: '0.5rem', borderBottom: '1px solid var(--slate-100)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                <Image src="/logo.png" alt="FMS Logo" width={40} height={40} style={{ objectFit: 'contain', flexShrink: 0 }} />
+                                <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.1' }}>
+                                    <span style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--primary-blue)' }}>FMS</span>
+                                    <span style={{ fontSize: '0.65rem', fontWeight: '600', color: 'var(--gray-medium)', textTransform: 'uppercase' }}>Financial Managing Support</span>
+                                </div>
+                            </li>
+                        )}
                         <li>
                             <Link href="/" onClick={closeMenus}>{t('nav.home')}</Link>
                         </li>
