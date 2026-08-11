@@ -19,11 +19,15 @@
         "payroll": "Gestion de paie",
         "performance": "Gestion de performance",
         "teambuilding": "Team building",
-        "audit": "Audit externe"
+        "audit": "Audit externe",
+        "juridique": "Juridique",
+        "mines": "Mandataire en Mines",
+        "rh": "Ressources Humaines",
+        "finance": "Finance"
     },
     "hero": {
-        "title": "Partenaire de Croissance",
-        "subtitle": "Financial Managing Support est un cabinet de conseil en Ressources Humaines et en Finance, dédié à l’accompagnement des organisations dans l’atteinte de leurs objectifs.",
+        "title": "Partenaire de croissance",
+        "subtitle": "Financial Managing Support est un cabinet dédié à l’accompagnement des organisations dans l’atteinte de leurs objectifs.",
         "filter": {
             "title": "Trouvez votre opportunité",
             "search_placeholder": "Poste ou formation",
@@ -60,7 +64,11 @@
         "payroll": "Gestion rigoureuse de la paie et des obligations sociales pour votre sérénité.",
         "performance": "Optimisation de la performance individuelle et collective au sein de votre organisation.",
         "teambuilding": "Activités et ateliers pour renforcer la cohésion et la motivation de vos équipes.",
-        "audit": "Audits externes indépendants pour garantir la transparence et la fiabilité de vos comptes."
+        "audit": "Audits externes indépendants pour garantir la transparence et la fiabilité de vos comptes.",
+        "juridique": "Conseil juridique stratégique, rédaction de contrats et gestion du contentieux pour sécuriser vos opérations.",
+        "mines": "Accompagnement spécialisé dans la création, la gestion et le maintien des droits miniers en RDC.",
+        "rh": "Solutions globales en capital humain : placement, recrutement de talents, formation professionnelle, gestion des performances et team building.",
+        "finance": "Gestion financière complète : tenue de comptabilité, audit externe indépendant, gestion de la paie et secrétariat social."
     },
     "service_details": {
         "placement": {
@@ -152,6 +160,44 @@
             "feature2": "Audit contractuel et financier",
             "feature3": "Évaluation du contrôle interne",
             "feature4": "Revue des procédures et risques"
+        },
+        "juridique": {
+            "title": "Juridique",
+            "subtitle": "Votre bouclier légal pour des décisions éclairées",
+            "p1": "Chez FMS, notre département juridique met à disposition de nos clients une expertise pointue et un accompagnement sur mesure pour sécuriser toutes leurs opérations.\n\nDe la rédaction de contrats complexes à la gestion des litiges, en passant par la conformité réglementaire et le conseil stratégique, nos juristes expérimentés sont à vos côtés à chaque étape de votre développement.\n\nNous garantissons un service proactif, confidentiel et parfaitement aligné avec les réalités du droit congolais et international.",
+            "feature1": "Rédaction & négociation de contrats",
+            "feature2": "Gestion du contentieux & création des sociétés",
+            "feature3": "Conformité & veille juridique",
+            "feature4": "Conseil & support interne",
+            "feature5": "Droit des sociétés & gouvernance"
+        },
+        "mines": {
+            "title": "Mandataire en Mines",
+            "subtitle": "Expertise minière au service de vos droits",
+            "p1": "FMS offre un service complet de mandataire en mines, accompagnant les opérateurs miniers dans toutes les démarches administratives, juridiques et techniques liées à l'exploitation des ressources naturelles en RDC.\n\nNotre équipe spécialisée assure le suivi rigoureux de vos droits miniers, depuis la création de votre société minière jusqu'au maintien de la validité de vos titres, en passant par la gestion des renouvellements et des mutations.\n\nNous veillons à ce que vos activités respectent en permanence les exigences techniques et environnementales en vigueur, vous permettant d'opérer en toute sécurité et légalité.",
+            "feature1": "Création des sociétés minières",
+            "feature2": "Gestion et assistance des contentieux miniers",
+            "feature3": "Maintien de la validité des droits",
+            "feature4": "Gestion des renouvellements & mutations",
+            "feature5": "Suivi des techniques & environnementales"
+        },
+        "rh": {
+            "title": "Ressources Humaines",
+            "subtitle": "Le capital humain, moteur de votre performance",
+            "p1": "Chez FMS, notre pôle Ressources Humaines propose des solutions d'accompagnement globales et sur mesure pour le développement et la gestion de votre capital humain.\n\nNous regroupons sous cette expertise le placement professionnel (intérim et permanent), le recrutement stratégique de talents et de cadres dirigeants, l'ingénierie de formations adaptées aux exigences du marché, ainsi que l'évaluation et la gestion des performances.\n\nNotre mission est de vous aider à attirer, développer et fidéliser les meilleurs profils tout en favorisant la cohésion d'équipe grâce à nos ateliers de team building.",
+            "feature1": "Placement & Recrutement de Talents",
+            "feature2": "Formations Professionnelles & Certifiantes",
+            "feature3": "Gestion & Évaluation des Performances",
+            "feature4": "Team Building & Motivation des équipes"
+        },
+        "finance": {
+            "title": "Finance",
+            "subtitle": "Sécurisez et optimisez vos flux financiers",
+            "p1": "FMS accompagne les entreprises dans la gestion comptable, financière et administrative afin de sécuriser leur croissance et optimiser leur rentabilité.\n\nNotre pôle Finance regroupe la tenue et la surveillance de votre comptabilité au quotidien, la gestion rigoureuse de la paie et des obligations sociales de vos collaborateurs, ainsi que la réalisation d'audits externes et contractuels indépendants pour apporter transparence et conformité à vos opérations.\n\nNous mettons à votre disposition des outils de pilotage stratégique et des tableaux de bord précis pour des prises de décision sereines.",
+            "feature1": "Tenue de comptabilité & surveillance",
+            "feature2": "Audit financier & commissariat aux comptes",
+            "feature3": "Gestion de la paie & secrétariat social",
+            "feature4": "Reporting & Tableaux de bord de pilotage"
         }
     },
     "stats": {
@@ -239,9 +285,9 @@
     "about": {
         "title": "Qui sommes-nous ?",
         "subtitle": "Partenaire de croissance",
-        "description": "Nous sommes une Société par Actions Simplifiée (SAS) spécialisée en conseil en Ressources Humaines et en Finance, engagée aux côtés des entreprises pour optimiser leur performance.\n\nNous accompagnons nos partenaires dans la gestion et la structuration de leurs missions, en apportant des solutions concrètes, adaptées à leurs réalités opérationnelles.\n\nNous appuyons également les entreprises dans leur installation en République Démocratique du Congo, de la conception stratégique à la mise en œuvre, pour des résultats durables.",
+        "description": "Nous sommes une Société par Actions Simplifiée (SAS) spécialisée dans l'accompagnement des entreprises à travers nos services : Ressources Humaines, Finance, Fiscalité, Immigration, Juridique et Mandataire en Mines.\n\nNous accompagnons nos partenaires dans la gestion et la structuration de leurs missions, en apportant des solutions concrètes, adaptées à leurs réalités opérationnelles.\n\nNous appuyons également les entreprises dans leur installation en République démocratique du Congo, de la conception stratégique à la mise en œuvre, pour des résultats durables.",
         "history_title": "Historique",
-        "history_text": "Financial Managing Support est une société par actions simplifiée (SAS) qui se démarque en tant que partenaire stratégique. Depuis notre fondation en 2018, nous avons su tisser des liens solides avec nos clients à travers la RDC et à l’international, en les aidant à transformer leurs défis en opportunités. Nous croyons fermement que chaque entreprise est unique. C’est pourquoi nos solutions sont entièrement personnalisées pour répondre aux besoins spécifiques de nos clients. En optimisant l’efficacité de leurs équipes, nous leur permettons de se concentrer sur ce qui compte vraiment : leur cœur de métier.",
+        "history_text": "Nous sommes une Société par Actions Simplifiée (SAS) spécialisée dans l'accompagnement des entreprises à travers nos services : Ressources Humaines, Finance, Fiscalité, Immigration, Juridique et Mandataire en Mines.\n\nNous accompagnons nos partenaires dans la gestion et la structuration de leurs missions, en apportant des solutions concrètes, adaptées à leurs réalités opérationnelles.\n\nDepuis notre fondation en 2018, nous avons su tisser des liens solides avec nos clients à travers la RDC et à l’international, en les aidant à transformer leurs défis en opportunités. Nous croyons fermement que chaque entreprise est unique. C’est pourquoi nos solutions sont entièrement personnalisées pour répondre aux besoins spécifiques de nos clients. En optimisant l’efficacité de leurs équipes, nous leur permettons de se concentrer sur ce qui compte vraiment : leur cœur de métier.",
         "mission_title": "Notre Mission",
         "mission_text": "Notre mission consiste à faire de vos défis de gestion notre levier de performance. Que ce soit à travers la fiscalité, la finance en passant par les ressources humaines et tant d'autres domaines. notre approche humaine et notre expertise nous permettent de bâtir des partenariats de confiance, contribuant ainsi au succès durable de chaque entreprise que nous accompagnons.",
         "vision_title": "Notre Vision",

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from './LanguageContext';
 
 export default function Header() {
@@ -10,6 +11,7 @@ export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,6 +20,17 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Fermer le menu automatiquement quand l'URL change
+    useEffect(() => {
+        setServicesOpen(false);
+        setMobileMenuOpen(false);
+    }, [pathname]);
+
+    const closeMenus = () => {
+        setServicesOpen(false);
+        setMobileMenuOpen(false);
+    };
 
     const languages = [
         { code: 'fr', label: 'FR' },
@@ -30,7 +43,7 @@ export default function Header() {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <nav className="nav">
-                    <Link href="/" className="nav-logo">
+                    <Link href="/" className="nav-logo" onClick={closeMenus}>
                         <Image src="/logo.png" alt="FMS Logo" width={55} height={55} />
                         <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
                             <span style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--primary-blue)', letterSpacing: '-0.02em' }}>FMS</span>
@@ -42,12 +55,16 @@ export default function Header() {
 
                     <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
                         <li>
-                            <Link href="/">{t('nav.home')}</Link>
+                            <Link href="/" onClick={closeMenus}>{t('nav.home')}</Link>
                         </li>
                         <li>
-                            <Link href="/a-propos">{t('nav.about')}</Link>
+                            <Link href="/a-propos" onClick={closeMenus}>{t('nav.about')}</Link>
                         </li>
-                        <li className={`nav-dropdown ${servicesOpen ? 'open' : ''}`}>
+                        <li 
+                            className={`nav-dropdown ${servicesOpen ? 'open' : ''}`}
+                            onMouseEnter={() => setServicesOpen(true)}
+                            onMouseLeave={() => setServicesOpen(false)}
+                        >
                             <a
                                 href="#"
                                 onClick={(e) => {
@@ -57,27 +74,26 @@ export default function Header() {
                             >
                                 {t('nav.services')} ▾
                             </a>
-                            <div className="nav-dropdown-content">
-                                <Link href="/services/placement">{t('services_list.placement')}</Link>
-                                <Link href="/services/recruitment">{t('services_list.recruitment')}</Link>
-                                <Link href="/services/training">{t('services_list.training')}</Link>
-                                <Link href="/services/tax">{t('services_list.tax')}</Link>
-                                <Link href="/services/accounting">{t('services_list.accounting')}</Link>
-                                <Link href="/services/immigration">{t('services_list.immigration')}</Link>
-                                <Link href="/services/payroll">{t('services_list.payroll')}</Link>
-                                <Link href="/services/performance">{t('services_list.performance')}</Link>
-                                <Link href="/services/teambuilding">{t('services_list.teambuilding')}</Link>
-                                <Link href="/services/audit">{t('services_list.audit')}</Link>
+                            <div 
+                                className="nav-dropdown-content"
+                                style={!servicesOpen ? { opacity: 0, visibility: 'hidden', pointerEvents: 'none' } : { opacity: 1, visibility: 'visible', pointerEvents: 'auto' }}
+                            >
+                                <Link href="/services/rh" onClick={closeMenus}>{t('services_list.rh')}</Link>
+                                <Link href="/services/finance" onClick={closeMenus}>{t('services_list.finance')}</Link>
+                                <Link href="/services/tax" onClick={closeMenus}>{t('services_list.tax')}</Link>
+                                <Link href="/services/immigration" onClick={closeMenus}>{t('services_list.immigration')}</Link>
+                                <Link href="/services/juridique" onClick={closeMenus}>{t('services_list.juridique')}</Link>
+                                <Link href="/services/mines" onClick={closeMenus}>{t('services_list.mines')}</Link>
                             </div>
                         </li>
                         <li>
-                            <Link href="/offres/emploi">{t('nav.jobs')}</Link>
+                            <Link href="/offres/emploi" onClick={closeMenus}>{t('nav.jobs')}</Link>
                         </li>
                         <li>
-                            <Link href="/offres/formations">{t('nav.training')}</Link>
+                            <Link href="/offres/formations" onClick={closeMenus}>{t('nav.training')}</Link>
                         </li>
                         <li>
-                            <Link href="/contact">{t('nav.contact')}</Link>
+                            <Link href="/contact" onClick={closeMenus}>{t('nav.contact')}</Link>
                         </li>
                     </ul>
 
@@ -94,6 +110,7 @@ export default function Header() {
                         {/* Discrete admin icon - hidden behind languages */}
                         <Link
                             href="/admin"
+                            onClick={closeMenus}
                             style={{
                                 marginLeft: '0.5rem',
                                 padding: '0.25rem 0.5rem',

@@ -58,55 +58,20 @@ export default function AboutPage() {
                         </p>
                     </div>
                 </div>
-
-                <div style={{
-                    position: 'absolute',
-                    bottom: '0',
-                    left: '0',
-                    width: '100%',
-                    height: '100px',
-                    background: 'linear-gradient(to top, var(--bg-white), transparent)',
-                    zIndex: '5'
-                }}></div>
             </section>
 
             <section style={{ padding: '5rem 0' }}>
                 <div className="container">
-                    <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', marginBottom: '4rem' }}>
-                        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                            {t('about.description').split('\n\n').map((para, i) => (
-                                <p key={i} style={{
-                                    fontSize: '1.2rem',
-                                    lineHeight: '1.8',
-                                    color: 'var(--slate-700)',
-                                    marginBottom: i === t('about.description').split('\n\n').length - 1 ? 0 : '1.5rem'
-                                }}>
-                                    {para}
-                                </p>
-                            ))}
-                        </div>
-                    </div>
-
                     <div className="section-zigzag">
                         {/* History Row */}
-                        <div className="zigzag-row animate-fadeInUp">
-                            <div className="glass-card" style={{ padding: '3rem', borderRadius: '2rem' }}>
+                        <div className="animate-fadeInUp" style={{ marginBottom: '4rem' }}>
+                            <div className="glass-card" style={{ padding: '3.5rem', borderRadius: '2rem' }}>
                                 <h2 className="gradient-text" style={{ marginBottom: '1.5rem', fontSize: '2.5rem' }}>{t('about.history_title')}</h2>
-                                <p style={{ fontSize: '1.15rem', lineHeight: '1.8', color: 'var(--slate-600)' }}>
-                                    {t('about.history_text')}
-                                </p>
-                            </div>
-                            <div style={{ position: 'relative', height: '100%', minHeight: '300px' }}>
-                                <div className="shape-1 floating-shape" style={{ opacity: 0.1 }}></div>
-                                <div style={{
-                                    background: 'url(/images/hero-bg.jpg)',
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    width: '100%',
-                                    height: '100%',
-                                    borderRadius: '2rem',
-                                    boxShadow: 'var(--shadow-xl)'
-                                }}></div>
+                                {t('about.history_text').split('\n\n').map((para, i) => (
+                                    <p key={i} style={{ fontSize: '1.15rem', lineHeight: '1.8', color: 'var(--slate-600)', marginBottom: i === t('about.history_text').split('\n\n').length - 1 ? 0 : '1.25rem' }}>
+                                        {para}
+                                    </p>
+                                ))}
                             </div>
                         </div>
 

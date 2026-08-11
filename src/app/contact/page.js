@@ -55,19 +55,19 @@ export default function ContactPage() {
                         <div>
                             <h3 style={{ marginBottom: '1.5rem' }}>{t('footer.contact_us')}</h3>
                             <div style={{ marginBottom: '1rem' }}>
-                                <p><strong>📍 {t('footer.address')}:</strong></p>
-                                <p>Bernadette Masengu, 4, Avenue Citronnier, 2ème étage, Kinshasa / Gombe</p>
+                                <p><strong>{t('footer.address')}:</strong></p>
+                                <p>Avenue Citronnier 4, 5ème étage, Kinshasa / Gombe</p>
                             </div>
                             <div style={{ marginBottom: '1rem' }}>
-                                <p><strong>📞 {t('footer.phone')}:</strong></p>
+                                <p><strong>{t('footer.phone')}:</strong></p>
                                 <p>+243 808 347 782</p>
                             </div>
                             <div style={{ marginBottom: '1rem' }}>
-                                <p><strong>✉️ {t('footer.email')}:</strong></p>
+                                <p><strong>{t('footer.email')}:</strong></p>
                                 <p>contact@fms-drc.com</p>
                             </div>
                             <div style={{ marginTop: '2rem', padding: '1.5rem', background: '#f3f4f6', borderRadius: '0.75rem' }}>
-                                <h4 style={{ marginBottom: '0.5rem' }}>🕒 Horaires</h4>
+                                <h4 style={{ marginBottom: '0.5rem' }}>Horaires</h4>
                                 <p>Lun - Ven: 8h00 - 16h00</p>
                                 <p>Sam - Dim: Fermé</p>
                             </div>

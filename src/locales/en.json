@@ -19,11 +19,15 @@
         "payroll": "Payroll Management",
         "performance": "Performance Management",
         "teambuilding": "Team Building",
-        "audit": "External Audit"
+        "audit": "External Audit",
+        "juridique": "Legal Services",
+        "mines": "Mining Mandate",
+        "rh": "Human Resources",
+        "finance": "Finance"
     },
     "hero": {
         "title": "Your Partner for Growth",
-        "subtitle": "Financial Managing Support assists you in all your human resources needs: placement, recruitment, training, tax, accounting, and immigration.",
+        "subtitle": "Financial Managing Support is a firm dedicated to supporting organizations in achieving their goals.",
         "filter": {
             "title": "Find your opportunity",
             "search_placeholder": "Job or training",
@@ -62,7 +66,11 @@
         "payroll": "Rigorous payroll management and social obligations for your peace of mind.",
         "performance": "Optimization of individual and collective performance within your organization.",
         "teambuilding": "Activities and workshops to strengthen cohesion and motivation within your teams.",
-        "audit": "Independent external audits to guarantee the transparency and reliability of your accounts."
+        "audit": "Independent external audits to guarantee the transparency and reliability of your accounts.",
+        "juridique": "Strategic legal advice, contract drafting and dispute management to secure your operations.",
+        "mines": "Specialized support in the creation, management and maintenance of mining rights in DRC.",
+        "rh": "Global human capital solutions: placement, recruitment, training, performance management, and team-building.",
+        "finance": "Comprehensive financial management: bookkeeping, independent external audit, payroll management, and social secretariat."
     },
     "service_details": {
         "placement": {
@@ -154,6 +162,44 @@
             "feature2": "Contractual and financial audit",
             "feature3": "Evaluation of internal control",
             "feature4": "Review of procedures and risks"
+        },
+        "juridique": {
+            "title": "Legal Services",
+            "subtitle": "Your legal shield for informed decisions",
+            "p1": "At FMS, our legal department provides clients with sharp expertise and tailored support to secure all their operations.\n\nFrom drafting complex contracts to managing disputes, regulatory compliance and strategic advice, our experienced lawyers are by your side at every stage of your development.\n\nWe guarantee a proactive, confidential service perfectly aligned with the realities of Congolese and international law.",
+            "feature1": "Contract drafting & negotiation",
+            "feature2": "Dispute management & company formation",
+            "feature3": "Compliance & legal watch",
+            "feature4": "Legal advice & internal support",
+            "feature5": "Corporate law & governance"
+        },
+        "mines": {
+            "title": "Mining Mandate",
+            "subtitle": "Mining expertise at the service of your rights",
+            "p1": "FMS offers a comprehensive mining mandate service, supporting mining operators in all administrative, legal and technical procedures related to natural resource exploitation in the DRC.\n\nOur specialized team ensures rigorous monitoring of your mining rights, from the creation of your mining company to maintaining the validity of your titles, including management of renewals and transfers.\n\nWe ensure that your activities permanently comply with the applicable technical and environmental requirements, allowing you to operate safely and legally.",
+            "feature1": "Creation of mining companies",
+            "feature2": "Management and assistance of mining disputes",
+            "feature3": "Maintenance of rights validity",
+            "feature4": "Management of renewals & transfers",
+            "feature5": "Technical & environmental monitoring"
+        },
+        "rh": {
+            "title": "Human Resources Management",
+            "subtitle": "Human capital, the driver of your performance",
+            "p1": "At FMS, our Human Resources division offers comprehensive, tailor-made support solutions for the development and management of your human capital.\n\nWe bring together within this expertise professional placement (temporary and permanent), strategic talent and executive recruitment, custom training programs, as well as performance management and evaluation.\n\nOur mission is to help you attract, develop, and retain the best profiles while fostering team cohesion through our team-building workshops.",
+            "feature1": "Placement & Talent Recruitment",
+            "feature2": "Professional & Certified Trainings",
+            "feature3": "Performance Evaluation & Management",
+            "feature4": "Team Building & Employee Motivation"
+        },
+        "finance": {
+            "title": "Finance & Accounting Services",
+            "subtitle": "Secure and optimize your financial flows",
+            "p1": "FMS assists companies in accounting, financial, and administrative management to secure their growth and optimize profitability.\n\nOur Finance division gathers bookkeeping and accounting supervision, rigorous payroll management and social obligations, as well as independent external and contractual audits to bring transparency and compliance to your business.\n\nWe provide you with strategic steering tools and precise dashboards for sound decision-making.",
+            "feature1": "Bookkeeping & Accounting Supervision",
+            "feature2": "Financial Audit & Statutory Auditing",
+            "feature3": "Payroll Management & Social Declarations",
+            "feature4": "Reporting & Steering Dashboards"
         }
     },
     "stats": {
@@ -241,7 +287,7 @@
     "about": {
         "title": "Who Are We?",
         "subtitle": "Your Strategic Partner in Human Capital",
-        "description": "We are a simplified joint-stock company (SAS) specialized in supporting both private and public entities in the fields of human resources, professional recruitment, professional training, finance, taxation, company setup in Congo, and corporate organization...",
+        "description": "We are a simplified joint-stock company (SAS) specialized in supporting businesses through our 6 strategic services: Human Resources Management, Finance & Accounting, Tax Consulting, Immigration & Mobility, Legal Services, and our role as a Mining Mandant.\n\nWe assist our partners in managing and structuring their missions, delivering concrete solutions adapted to their operational realities.\n\nWe also support companies in setting up their business in the Democratic Republic of Congo, from strategic design to implementation, for sustainable growth.",
         "history_title": "History",
         "history_text": "Financial Managing Support is a simplified joint-stock company (SAS) that stands out as a strategic partner. Since our founding in 2018, we have built strong ties with our clients across the DRC and internationally, helping them transform their challenges into opportunities. We firmly believe that every company is unique. That is why our solutions are fully customized to meet the specific needs of our clients. By optimizing the efficiency of their teams, we allow them to focus on what really matters: their core business.",
         "mission_title": "Our Mission",

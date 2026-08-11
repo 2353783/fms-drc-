@@ -19,11 +19,15 @@
         "payroll": "Gestión de nómina",
         "performance": "Gestión de desempeño",
         "teambuilding": "Team building",
-        "audit": "Auditoría externa"
+        "audit": "Auditoría externa",
+        "juridique": "Servicios Jurídicos",
+        "mines": "Mandatario Minero",
+        "rh": "Recursos Humanos",
+        "finance": "Finanzas"
     },
     "hero": {
         "title": "Su Socio de Crecimiento",
-        "subtitle": "Financial Managing Support le acompaña en todas sus necesidades de recursos humanos: colocación, reclutamiento, formación, fiscalidad, contabilidad e inmigración.",
+        "subtitle": "Financial Managing Support es un gabinete dedicado al acompañamiento de las organizaciones en el logro de sus objetivos.",
         "filter": {
             "title": "Encuentre su oportunidad",
             "search_placeholder": "Puesto o formación",
@@ -62,7 +66,11 @@
         "payroll": "Gestión rigurosa de nóminas y obligaciones sociales para su tranquilidad.",
         "performance": "Optimización del desempeño individual y colectivo dentro de su organización.",
         "teambuilding": "Actividades y talleres para fortalecer la cohesión y motivación de sus equipos.",
-        "audit": "Auditorías externas independientes para garantizar la transparencia y fiabilidad de sus cuentas."
+        "audit": "Auditorías externas independientes para garantizar la transparencia y fiabilidad de sus cuentas.",
+        "juridique": "Asesoramiento jurídico estratégico, redacción de contratos y gestión de litigios para asegurar sus operaciones.",
+        "mines": "Acompañamiento especializado en la creación, gestión y mantenimiento de derechos mineros en la RDC.",
+        "rh": "Soluciones globales de capital humano: colocación, reclutamiento, formación profesional, gestión de desempeño y team building.",
+        "finance": "Gestión financiera integral: contabilidad, auditoría externa, nóminas y asesoramiento social."
     },
     "stats": {
         "placements": "Colocaciones exitosas",

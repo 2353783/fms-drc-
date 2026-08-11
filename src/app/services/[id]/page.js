@@ -19,6 +19,10 @@ export default function ServiceDetailPage() {
         performance: '/images/performance-hero.jpg',
         teambuilding: '/images/teambuilding-hero.jpg',
         audit: '/images/audit-hero.jpg',
+        juridique: '/images/juridique.jpg',
+        mines: '/images/mine.jpg',
+        rh: '/images/placement-hero.jpg',
+        finance: '/images/accounting-hero.jpg',
     };
 
     // Normalize ID for localization lookup (recrutement vs recruitment)
@@ -53,13 +57,15 @@ export default function ServiceDetailPage() {
                                 const paragraphs = t(`service_details.${normalizedId}.p1`).split('\n').map((paragraph, index) => (
                                     paragraph.trim() ? <p key={index} style={{ marginBottom: '1rem' }}>{paragraph}</p> : null
                                 ));
-                                const features = [1, 2, 3, 4].map(num => t(`service_details.${normalizedId}.feature${num}`));
+                                const features = [1, 2, 3, 4, 5]
+                                    .map(num => t(`service_details.${normalizedId}.feature${num}`))
+                                    .filter(f => f && !f.startsWith('service_details.'));
 
                                 // Appliquer un thème spécifique selon le service
                                 let layoutType = 1;
-                                if (['placement', 'payroll', 'audit'].includes(normalizedId)) layoutType = 1;
-                                else if (['recruitment', 'tax', 'performance'].includes(normalizedId)) layoutType = 2;
-                                else if (['training', 'teambuilding'].includes(normalizedId)) layoutType = 3;
+                                if (['placement', 'payroll', 'audit', 'juridique'].includes(normalizedId)) layoutType = 1;
+                                else if (['recruitment', 'tax', 'performance', 'mines', 'finance'].includes(normalizedId)) layoutType = 2;
+                                else if (['training', 'teambuilding', 'rh'].includes(normalizedId)) layoutType = 3;
                                 else layoutType = 4; // accounting, immigration
 
                                 if (layoutType === 1) {
@@ -107,7 +113,12 @@ export default function ServiceDetailPage() {
                                         </>
                                     );
                                 } else if (layoutType === 3) {
-                                    const icons = ['🎯', '💡', '🚀', '⭐'];
+                                    const rhImages = [
+                                        '/images/placement-hero.jpg',
+                                        '/images/training-hero.jpg',
+                                        '/images/performance-hero.jpg',
+                                        '/images/teambuilding-hero.jpg'
+                                    ];
                                     return (
                                         <>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem' }}>
@@ -118,11 +129,30 @@ export default function ServiceDetailPage() {
                                             <div style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--slate-700)', marginBottom: '3rem' }}>
                                                 {paragraphs}
                                             </div>
-                                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
+                                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
                                                 {features.map((feature, idx) => (
-                                                    <div key={idx} style={{ padding: '2rem 1.5rem', background: 'white', borderRadius: '1.25rem', border: '1px solid var(--slate-100)', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)', textAlign: 'center', transition: 'all 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'var(--primary-blue-light)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'var(--slate-100)'; }}>
-                                                        <div style={{ fontSize: '2.5rem', marginBottom: '1rem', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}>{icons[idx]}</div>
-                                                        <h4 style={{ fontWeight: '600', color: 'var(--slate-800)', margin: 0, lineHeight: '1.4' }}>{feature}</h4>
+                                                    <div 
+                                                        key={idx} 
+                                                        style={{ 
+                                                            background: 'white', 
+                                                            borderRadius: '1.25rem', 
+                                                            overflow: 'hidden',
+                                                            border: '1px solid var(--slate-100)', 
+                                                            boxShadow: '0 10px 20px -3px rgba(0,0,0,0.08)', 
+                                                            transition: 'all 0.3s' 
+                                                        }} 
+                                                        onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 15px 30px rgba(0,0,0,0.12)'; }} 
+                                                        onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 20px -3px rgba(0,0,0,0.08)'; }}
+                                                    >
+                                                        <div style={{ 
+                                                            height: '160px', 
+                                                            backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.6)), url(${rhImages[idx % rhImages.length]})`,
+                                                            backgroundSize: 'cover',
+                                                            backgroundPosition: 'center'
+                                                        }}></div>
+                                                        <div style={{ padding: '1.5rem', textAlign: 'center' }}>
+                                                            <h4 style={{ fontWeight: '700', color: 'var(--slate-800)', margin: 0, lineHeight: '1.4', fontSize: '1.1rem' }}>{feature}</h4>
+                                                        </div>
                                                     </div>
                                                 ))}
                                             </div>

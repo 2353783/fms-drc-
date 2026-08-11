@@ -19,11 +19,15 @@
         "payroll": "薪资管理",
         "performance": "绩效管理",
         "teambuilding": "团队建设",
-        "audit": "外部审计"
+        "audit": "外部审计",
+        "juridique": "法律服务",
+        "mines": "矿业代理",
+        "rh": "人力资源",
+        "finance": "财务"
     },
     "hero": {
         "title": "您的增长合作伙伴",
-        "subtitle": "Financial Managing Support 为您提供全方位的人力资源服务：人才安置、招聘、培训、税务、财务和移民。",
+        "subtitle": "Financial Managing Support 是一家致力于协助各组织实现目标的专业机构。",
         "filter": {
             "title": "寻找您的机会",
             "search_placeholder": "职位或培训",
@@ -62,7 +66,11 @@
         "payroll": "严谨的薪资管理和社会义务处理，让您高枕无忧。",
         "performance": "优化您组织内部的个人和集体绩效。",
         "teambuilding": "旨在增强团队凝聚力和动力活动和研讨会。",
-        "audit": "独立的外部审计，确保您账目的透明性和可靠性。"
+        "audit": "独立的外部审计，确保您账目的透明性和可靠性。",
+        "juridique": "提供合同起草、合规审查及诉讼管理等全方位的法律咨询与支持。",
+        "mines": "协助矿业公司在刚果（金）进行设立、采矿权维护、延期及转让等相关服务。",
+        "rh": "全面的合规人力资源解决方案：包括人才安置、招聘、专业培训、绩效管理及团队建设。",
+        "finance": "全面的财务与会计管理服务：包括账务处理、外部审计、薪资管理以及财务咨询。"
     },
     "stats": {
         "placements": "成功安置",

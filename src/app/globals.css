@@ -131,7 +131,6 @@ h4 {
 
 p {
   margin-bottom: var(--space-md);
-  text-align: justify;
 }
 
 a {
@@ -704,6 +703,38 @@ a:hover {
   text-align: center;
   color: var(--gray-light);
   font-size: 0.875rem;
+}
+
+/* Job & Training Search Filter Bar */
+.filters {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-input, .filter-select {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid var(--slate-200);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+  background: var(--slate-50);
+  color: var(--slate-800);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-input:focus, .filter-select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background: white;
 }
 
 /* Admin Styles */

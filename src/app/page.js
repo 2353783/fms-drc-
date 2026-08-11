@@ -15,8 +15,7 @@ export default function Home() {
   const recentNews = (offersData.news || []).filter(news => news.active).slice(0, 2);
 
   const services = [
-    'placement', 'recruitment', 'training', 'tax', 'accounting',
-    'immigration', 'payroll', 'performance', 'teambuilding', 'audit'
+    'rh', 'finance', 'tax', 'immigration', 'juridique', 'mines'
   ];
 
   return (
@@ -57,80 +56,8 @@ export default function Home() {
               {t('hero.subtitle')}
             </p>
 
-            {/* Elite Integrated Search Bar */}
-            <div className="animate-fadeInUp animate-delay-2" style={{ marginBottom: '5rem' }}>
-              <div className="glass-card-deep home-search-panel" style={{
-                padding: '0.75rem',
-                borderRadius: '100px',
-                maxWidth: '950px'
-              }}>
-                <form
-                  action="/offres/emploi"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                    gap: '0.25rem'
-                  }}
-                >
-                  <div className="home-search-field" style={{ flex: '1.5', minWidth: '220px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
-                    <label style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>{t('hero.filter.search_placeholder')}</label>
-                    <input
-                      type="text"
-                      placeholder="Ex: Comptable, RH..."
-                      className="search-input-elite"
-                      style={{
-                        background: 'transparent',
-                        border: 'none',
-                        color: 'white',
-                        padding: '0',
-                        fontSize: '1.1rem',
-                        outline: 'none',
-                        width: '100%',
-                        fontWeight: '500'
-                      }}
-                    />
-                  </div>
-
-                  <div className="home-search-divider" style={{ width: '1px', height: '35px', background: 'rgba(255,255,255,0.1)', display: 'block' }}></div>
-
-                  <div className="home-search-field" style={{ flex: '1', minWidth: '160px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
-                    <label style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>{t('hero.filter.profession')}</label>
-                    <select className="select-elite" style={{ background: 'transparent', border: 'none', color: 'white', padding: '0', fontSize: '1rem', outline: 'none', cursor: 'pointer', fontWeight: '500' }}>
-                      <option value="" style={{ color: 'black' }}>{t('hero.filter.profession')}</option>
-                      <option value="finance" style={{ color: 'black' }}>Finance</option>
-                      <option value="rh" style={{ color: 'black' }}>Ressources Humaines</option>
-                      <option value="tech" style={{ color: 'black' }}>Informatique</option>
-                    </select>
-                  </div>
-
-                  <div className="home-search-divider" style={{ width: '1px', height: '35px', background: 'rgba(255,255,255,0.1)', display: 'block' }}></div>
-
-                  <div className="home-search-field" style={{ flex: '1', minWidth: '160px', padding: '0 1.75rem', display: 'flex', flexDirection: 'column' }}>
-                    <label style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>{t('hero.filter.location')}</label>
-                    <select className="select-elite" style={{ background: 'transparent', border: 'none', color: 'white', padding: '0', fontSize: '1rem', outline: 'none', cursor: 'pointer', fontWeight: '500' }}>
-                      <option value="" style={{ color: 'black' }}>{t('hero.filter.location')}</option>
-                      <option value="kinshasa" style={{ color: 'black' }}>Kinshasa</option>
-                      <option value="lubumbashi" style={{ color: 'black' }}>Lubumbashi</option>
-                      <option value="goma" style={{ color: 'black' }}>Goma</option>
-                    </select>
-                  </div>
-
-                  <button type="submit" className="btn btn-primary pulse home-search-submit" style={{
-                    borderRadius: '100px',
-                    padding: '1.1rem 2.8rem',
-                    fontSize: '1rem',
-                    fontWeight: '800',
-                    boxShadow: '0 10px 20px rgba(59, 130, 246, 0.3)'
-                  }}>
-                    {t('hero.filter.search_btn')}
-                  </button>
-                </form>
-              </div>
-            </div>
-
-            <div className="hero-buttons animate-fadeInUp animate-delay-3 home-hero-actions" style={{ display: 'flex', gap: '2rem' }}>
-              <Link href="/services/placement" className="btn btn-primary" style={{ padding: '1.2rem 3rem', borderRadius: '100px', fontSize: '1rem', fontWeight: '700' }}>
+            <div className="hero-buttons animate-fadeInUp animate-delay-2 home-hero-actions" style={{ display: 'flex', gap: '2rem' }}>
+              <Link href="/services/rh" className="btn btn-primary" style={{ padding: '1.2rem 3rem', borderRadius: '100px', fontSize: '1rem', fontWeight: '700' }}>
                 {t('hero.cta_services')}
               </Link>
               <Link href="/contact" className="btn btn-secondary glass-card" style={{
@@ -238,7 +165,7 @@ export default function Home() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '5rem' }}>
-            <Link href="/services/placement" className="btn btn-secondary glow-on-hover" style={{ padding: '1.1rem 3rem', borderRadius: '100px', fontWeight: '600' }}>
+            <Link href="/services/rh" className="btn btn-secondary glow-on-hover" style={{ padding: '1.1rem 3rem', borderRadius: '100px', fontWeight: '600' }}>
               {t('hero.cta_services')}
             </Link>
           </div>

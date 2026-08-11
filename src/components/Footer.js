@@ -57,25 +57,21 @@ export default function Footer() {
                     <div className="footer-column">
                         <h4>{t('footer.our_services')}</h4>
                         <ul>
-                            <li><Link href="/services/placement">{t('services_list.placement')}</Link></li>
-                            <li><Link href="/services/recrutement">{t('services_list.recruitment')}</Link></li>
-                            <li><Link href="/services/formation">{t('services_list.training')}</Link></li>
-                            <li><Link href="/services/fiscalite">{t('services_list.tax')}</Link></li>
-                            <li><Link href="/services/finance">{t('services_list.accounting')}</Link></li>
+                            <li><Link href="/services/rh">{t('services_list.rh')}</Link></li>
+                            <li><Link href="/services/finance">{t('services_list.finance')}</Link></li>
+                            <li><Link href="/services/tax">{t('services_list.tax')}</Link></li>
                             <li><Link href="/services/immigration">{t('services_list.immigration')}</Link></li>
-                            <li><Link href="/services/payroll">{t('services_list.payroll')}</Link></li>
-                            <li><Link href="/services/performance">{t('services_list.performance')}</Link></li>
-                            <li><Link href="/services/teambuilding">{t('services_list.teambuilding')}</Link></li>
-                            <li><Link href="/services/audit">{t('services_list.audit')}</Link></li>
+                            <li><Link href="/services/juridique">{t('services_list.juridique')}</Link></li>
+                            <li><Link href="/services/mines">{t('services_list.mines')}</Link></li>
                         </ul>
                     </div>
 
                     <div className="footer-column">
                         <h4>{t('footer.contact_us')}</h4>
                         <ul>
-                            <li>📍 {t('footer.address')}: Avenue Citronnier 4, 2ème étage, Kinshasa / Gombe</li>
-                            <li>📞 {t('footer.phone')}: +243 808 347 782</li>
-                            <li>✉️ {t('footer.email')}: contact@fms-drc.com</li>
+                            <li>{t('footer.address')}: Avenue Citronnier 4, 5ème étage, Kinshasa / Gombe</li>
+                            <li>{t('footer.phone')}: +243 808 347 782</li>
+                            <li>{t('footer.email')}: contact@fms-drc.com</li>
                         </ul>
                     </div>
                 </div>

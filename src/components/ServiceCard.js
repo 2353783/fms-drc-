@@ -17,6 +17,10 @@ export default function ServiceCard({ service }) {
         performance: '/images/performance-hero.jpg',
         teambuilding: '/images/teambuilding-hero.jpg',
         audit: '/images/audit-hero.jpg',
+        juridique: '/images/juridique.jpg',
+        mines: '/images/mine.jpg',
+        rh: '/images/placement-hero.jpg',
+        finance: '/images/accounting-hero.jpg',
     };
 
     return (
