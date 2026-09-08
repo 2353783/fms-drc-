@@ -18,10 +18,10 @@
             "company": "Financial Managing Support",
             "location": "Kinshasa",
             "type": "CDI",
-            "salary": "1000$ - 1500$",
+            "salary": "",
             "sector": "",
             "publishDate": "2026-01-27",
-            "expirationDate": "2026-08-29",
+            "expirationDate": "2026-09-09",
             "expirationTime": "12:00",
             "id": 1
         }
@@ -29,21 +29,21 @@
     "trainings": [
         {
             "title": {
-                "fr": "Formation : conformité douanière",
-                "en": "Training: Customs Compliance",
+                "fr": "Formation : Formation IA",
+                "en": "Training: Training AI",
                 "zh": "",
                 "es": ""
             },
             "description": {
-                "fr": "Maîtrisez la conformité douanière. Protégez votre activité.\n\nDans un environnement où les contrôles de la DGI, de la DGRAD et des autres régies financières deviennent de plus en plus stricts, la moindre erreur de déclaration, de classement ou de procédure peut entraîner des amendes lourdes, des blocages de marchandises ou des pertes financières importantes.\n",
+                "fr": "Formation",
                 "en": "",
                 "zh": "",
                 "es": ""
             },
-            "image": "/uploads/1769533051904-affiche-douane.jpg",
+            "image": "/uploads/1788863675921-FORMATION-IA-2.jpg",
             "active": true,
             "duration": "3 Heures",
-            "price": "Inscription 20$  &  Participation 200$",
+            "price": " Participation 100$",
             "level": {
                 "fr": "",
                 "en": "",
@@ -51,7 +51,7 @@
                 "es": ""
             },
             "publishDate": "2026-01-27",
-            "expirationDate": "2026-08-08",
+            "expirationDate": "2026-09-08",
             "expirationTime": "19:30",
             "id": 1
         },
