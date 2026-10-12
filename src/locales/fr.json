@@ -52,7 +52,12 @@
         "apply_now": "Postuler maintenant",
         "register": "S'inscrire",
         "latest_news": "Actualités & Galerie",
-        "news_desc": "Suivez les dernières nouvelles et activités de FMS"
+        "news_desc": "Suivez les dernières nouvelles et activités de FMS",
+        "our_partners": "Nos Partenaires",
+        "partners_desc": "Ils nous font confiance et nous accompagnent dans notre mission",
+        "our_presence": "Notre Présence Régionale & Internationale",
+        "presence_desc": "FMS déploie son expertise en République Démocratique du Congo et au Kenya pour accompagner votre croissance durable",
+        "presence_country": "RDC & Kenya"
     },
     "services_descriptions": {
         "placement": "Nous sommes spécialisés dans le placement de talents en reliant des agents qualifiés à des entreprises.",

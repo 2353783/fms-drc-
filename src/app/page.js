@@ -1,18 +1,69 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '../components/LanguageContext';
 import ServiceCard from '../components/ServiceCard';
 import JobCard from '../components/JobCard';
 import NewsCard from '../components/NewsCard';
 import TrainingCard from '../components/TrainingCard';
+import PresenceGlobe from '../components/PresenceGlobe';
 import offersData from '../data/offers.json';
 
+const PARTNERS = [
+  { src: '/images/partners/crdb-bank.png', alt: 'CRDB Bank' },
+  { src: '/images/partners/eastcastle.png', alt: 'Eastcastle Infrastructure' },
+  { src: '/images/partners/global-tech.png', alt: 'Global Tech' },
+  { src: '/images/partners/global-security.png', alt: 'Global Security' },
+  { src: '/images/partners/gilu-technologies.png', alt: 'Gilu Technologies sarl' },
+  { src: '/images/partners/eis.png', alt: 'EIS' },
+  { src: '/images/partners/sls.png', alt: 'Support Logistique Services' },
+  { src: '/images/partners/ats.png', alt: 'ATS - A Tsebo Solution' },
+  { src: '/images/partners/renfort-securite.png', alt: 'Renfort Sécurité' },
+  { src: '/images/partners/luxos-rdc.png', alt: 'Luxos RDC' },
+  { src: '/images/partners/magic-touch.png', alt: 'Magic Touch Imprimerie HD' },
+  { src: '/images/partners/mgt.png', alt: 'Matadi Gateway Terminal (MGT)' },
+  { src: '/images/partners/mitc.png', alt: 'MiTC' },
+  { src: '/images/partners/trans-academia.png', alt: 'Trans-Academia' },
+  { src: '/images/partners/seguce-rdc.png', alt: 'SEGUCE RDC' },
+  { src: '/images/partners/universel-plus.png', alt: 'Universel Plus' },
+  { src: '/images/partners/equatorial-power.png', alt: 'Equatorial Power' },
+  { src: '/images/partners/abc-group.png', alt: 'ABC Group' },
+  { src: '/images/partners/ascitech.png', alt: 'ASCITECH International' },
+  { src: '/images/partners/singafrica.png', alt: 'SINGAfrica' },
+  { src: '/images/partners/ais.png', alt: 'AIS' },
+];
+
 export default function Home() {
-  const { t } = useLanguage();
-  const recentJobs = (offersData.jobs || []).filter(job => job.active).slice(0, 3);
-  const recentTrainings = (offersData.trainings || []).filter(training => training.active).slice(0, 2);
-  const recentNews = (offersData.news || []).filter(news => news.active).slice(0, 2);
+  const { t, locale } = useLanguage();
+  const [data, setData] = useState({
+    jobs: offersData.jobs || [],
+    trainings: offersData.trainings || [],
+    news: offersData.news || []
+  });
+
+  useEffect(() => {
+    const fetchFreshData = async () => {
+      try {
+        const res = await fetch('/api/save-data', { cache: 'no-store' });
+        if (res.ok) {
+          const fresh = await res.json();
+          setData({
+            jobs: Array.isArray(fresh.jobs) ? fresh.jobs : (offersData.jobs || []),
+            trainings: Array.isArray(fresh.trainings) ? fresh.trainings : (offersData.trainings || []),
+            news: Array.isArray(fresh.news) ? fresh.news : (offersData.news || [])
+          });
+        }
+      } catch (err) {
+        console.error('Failed to fetch fresh data for home page:', err);
+      }
+    };
+    fetchFreshData();
+  }, []);
+
+  const recentJobs = (data.jobs || []).filter(job => job.active).slice(0, 3);
+  const recentTrainings = (data.trainings || []).filter(training => training.active).slice(0, 2);
+  const recentNews = (data.news || []).filter(news => news.active).slice(0, 2);
 
   const services = [
     'rh', 'finance', 'tax', 'immigration', 'juridique', 'mines'
@@ -148,6 +199,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners Marquee Section */}
+      <section className="partners-marquee-section" id="partners">
+        <div className="container" style={{ marginBottom: '3rem' }}>
+          <div className="section-header" style={{ textAlign: 'center' }}>
+            <h2 className="gradient-text home-section-title" style={{ fontSize: '2.5rem', fontWeight: '800' }}>{t('sections.our_partners')}</h2>
+            <p style={{ fontSize: '1.1rem', marginTop: '0.75rem', color: 'var(--slate-500)' }}>{t('sections.partners_desc')}</p>
+          </div>
+        </div>
+        <div className="partners-track" aria-label="Partners logos">
+          {/* First set */}
+          {PARTNERS.map((partner, i) => (
+            <div key={`a-${i}`} className="partner-logo-item">
+              <img src={partner.src} alt={partner.alt} loading="lazy" />
+            </div>
+          ))}
+          {/* Duplicate set for seamless infinite loop */}
+          {PARTNERS.map((partner, i) => (
+            <div key={`b-${i}`} className="partner-logo-item">
+              <img src={partner.src} alt={partner.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Services Section with Soft Curve */}
       <section className="services home-section" style={{
         padding: '10rem 0',
@@ -253,8 +328,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Geographic Presence / Map Section */}
+      <section className="presence-section home-section" id="presence">
+        <div className="container">
+          <div className="section-header" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 className="gradient-text home-section-title" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.our_presence')}</h2>
+            <p style={{ fontSize: '1.2rem', marginTop: '1rem', color: 'var(--slate-500)' }}>{t('sections.presence_desc')}</p>
+          </div>
+
+          <PresenceGlobe lang={locale} />
+        </div>
+      </section>
+
       {/* Actualités & Galerie with refined layout */}
-      <section className="news home-section" style={{ padding: '10rem 0', background: 'var(--slate-50)' }}>
+      <section className="news home-section" style={{ padding: '10rem 0', background: 'white' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', marginBottom: '6rem' }}>
             <h2 className="gradient-text home-section-title" style={{ fontSize: '3rem', fontWeight: '800' }}>{t('sections.latest_news')}</h2>

@@ -54,7 +54,12 @@
         "news_desc": "Stay updated with the latest news from FMS and the HR sector.",
         "about_us": "About Us",
         "latest_trainings": "Premier Training Programs",
-        "trainings_desc": "Elevate your professional skills with our expert-led certification courses."
+        "trainings_desc": "Elevate your professional skills with our expert-led certification courses.",
+        "our_partners": "Our Partners",
+        "partners_desc": "They trust us and support us in our mission",
+        "our_presence": "Our Regional & International Presence",
+        "presence_desc": "FMS delivers its expertise across the Democratic Republic of Congo and Kenya to support your sustainable growth",
+        "presence_country": "DRC & Kenya"
     },
     "services_descriptions": {
         "placement": "We help you find the ideal position matching your skills and professional aspirations.",

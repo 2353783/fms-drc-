@@ -123,7 +123,6 @@ export default function JobCard({ job }) {
                 <div className="offer-meta" style={{ marginBottom: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', fontSize: '0.9rem', color: 'var(--slate-600)', fontWeight: '500' }}>
                     <span>🏢 {job.company}</span>
                     <span>📍 {job.location}</span>
-                    {job.salary && <span>💰 {job.salary}</span>}
                 </div>
 
                 <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: '1.6', color: 'var(--slate-600)' }}>

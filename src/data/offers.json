@@ -13,12 +13,10 @@
                 "zh": "",
                 "es": ""
             },
-            "image": "/uploads/1769528004725-AFFICHE-OFFRE-FMS-IT-ASSISTANT.jpg",
             "active": true,
             "company": "Financial Managing Support",
             "location": "Kinshasa",
             "type": "CDI",
-            "salary": "",
             "sector": "",
             "publishDate": "2026-01-27",
             "expirationDate": "2026-09-09",
@@ -26,64 +24,7 @@
             "id": 1
         }
     ],
-    "trainings": [
-        {
-            "title": {
-                "fr": "Formation : Formation IA",
-                "en": "Training: Training AI",
-                "zh": "",
-                "es": ""
-            },
-            "description": {
-                "fr": "Formation",
-                "en": "",
-                "zh": "",
-                "es": ""
-            },
-            "image": "/uploads/1788863675921-FORMATION-IA-2.jpg",
-            "active": true,
-            "duration": "3 Heures",
-            "price": " Participation 100$",
-            "level": {
-                "fr": "",
-                "en": "",
-                "zh": "",
-                "es": ""
-            },
-            "publishDate": "2026-01-27",
-            "expirationDate": "2026-09-08",
-            "expirationTime": "19:30",
-            "id": 1
-        },
-        {
-            "title": {
-                "fr": "Formation : HRBP : Piloter la Performance & l’Excellence Opérationnelle.",
-                "en": "Training: HRBP: Driving Performance & Operational Excellence.",
-                "zh": "",
-                "es": ""
-            },
-            "description": {
-                "fr": "Financial Managing Support vous invite à sa formation exclusive :\n\nHRBP : Piloter la Performance & l’Excellence Opérationnelle.\nQue vous soyez responsable RH, manager ou aspirant HRBP, rejoignez-nous pour transformer votre vision des RH et maximiser votre impact au sein de votre organisation.",
-                "en": "",
-                "zh": "",
-                "es": ""
-            },
-            "image": "/uploads/1769533367222-FORMATION-RH-1.jpg",
-            "active": true,
-            "duration": "3 Heures",
-            "price": "Inscription 15$ & Participation 120$",
-            "level": {
-                "fr": "",
-                "en": "",
-                "zh": "",
-                "es": ""
-            },
-            "publishDate": "2026-01-27",
-            "expirationDate": "2026-02-20",
-            "expirationTime": "19:30",
-            "id": 2
-        }
-    ],
+    "trainings": [],
     "news": [
         {
             "title": {

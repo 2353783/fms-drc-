@@ -12,7 +12,9 @@ export default function RootLayout({ children }) {
         <title>FMS - Financial Managing Support | Ressources Humaines</title>
         <meta name="description" content="FMS - Votre partenaire RH de confiance. Services de placement, recrutement, formation, fiscalité, finance et immigration." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" type="image/png" href="/logo.png?v=2" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <link rel="apple-touch-icon" href="/logo.png?v=2" />
       </head>
       <body>
         <LanguageProvider>

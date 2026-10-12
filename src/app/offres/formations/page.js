@@ -1,12 +1,32 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../../../components/LanguageContext';
 import TrainingCard from '../../../components/TrainingCard';
 import offersData from '../../../data/offers.json';
 
 export default function TrainingsPage() {
     const { t } = useLanguage();
-    const trainings = offersData.trainings.filter(training => training.active);
+    const [allTrainings, setAllTrainings] = useState(offersData.trainings || []);
+
+    useEffect(() => {
+        const fetchFreshTrainings = async () => {
+            try {
+                const res = await fetch('/api/save-data', { cache: 'no-store' });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data.trainings)) {
+                        setAllTrainings(data.trainings);
+                    }
+                }
+            } catch (err) {
+                console.error('Error fetching fresh trainings:', err);
+            }
+        };
+        fetchFreshTrainings();
+    }, []);
+
+    const trainings = allTrainings.filter(training => training.active);
 
     return (
         <>

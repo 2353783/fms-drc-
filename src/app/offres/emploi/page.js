@@ -1,25 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../../../components/LanguageContext';
 import JobCard from '../../../components/JobCard';
 import offersData from '../../../data/offers.json';
 
 export default function JobsPage() {
     const { t } = useLanguage();
+    const [allJobs, setAllJobs] = useState(offersData.jobs || []);
     const [searchTerm, setSearchTerm] = useState('');
     const [locationFilter, setLocationFilter] = useState('');
     const [sectorFilter, setSectorFilter] = useState('');
 
-    const jobs = offersData.jobs.filter(job => job.active);
+    useEffect(() => {
+        const fetchFreshJobs = async () => {
+            try {
+                const res = await fetch('/api/save-data', { cache: 'no-store' });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data.jobs)) {
+                        setAllJobs(data.jobs);
+                    }
+                }
+            } catch (err) {
+                console.error('Error fetching fresh jobs:', err);
+            }
+        };
+        fetchFreshJobs();
+    }, []);
 
-    const locations = [...new Set(jobs.map(job => job.location))];
-    const sectors = [...new Set(jobs.map(job => job.sector))];
+    const activeJobs = allJobs.filter(job => job.active);
 
-    const filteredJobs = jobs.filter(job => {
-        const matchesSearch = job.title.fr.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            job.title.en.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            job.company.toLowerCase().includes(searchTerm.toLowerCase());
+    const locations = [...new Set(activeJobs.map(job => job.location).filter(Boolean))];
+    const sectors = [...new Set(activeJobs.map(job => job.sector).filter(Boolean))];
+
+    const filteredJobs = activeJobs.filter(job => {
+        const titleFr = job.title?.fr?.toLowerCase() || '';
+        const titleEn = job.title?.en?.toLowerCase() || '';
+        const company = job.company?.toLowerCase() || '';
+        const term = searchTerm.toLowerCase();
+
+        const matchesSearch = !term || titleFr.includes(term) || titleEn.includes(term) || company.includes(term);
         const matchesLocation = !locationFilter || job.location === locationFilter;
         const matchesSector = !sectorFilter || job.sector === sectorFilter;
         return matchesSearch && matchesLocation && matchesSector;
