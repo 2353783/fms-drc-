@@ -1853,20 +1853,68 @@ a:hover {
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
 }
 
-.globe-autorotate-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.8rem;
-  padding: 2px 4px;
-  color: var(--slate-600);
-  display: flex;
+.globe-controls-group {
+  display: inline-flex;
   align-items: center;
-  transition: color 0.2s ease;
+  gap: 5px;
+  margin-left: 6px;
+  padding-left: 8px;
+  border-left: 1px solid var(--slate-200);
+}
+
+.globe-ctrl-btn {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--slate-700);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  padding: 0;
+  user-select: none;
+}
+
+.globe-ctrl-btn:hover {
+  background: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.globe-ctrl-btn:active {
+  transform: scale(0.95);
+}
+
+.globe-autorotate-btn {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 0.72rem;
+  color: var(--slate-600);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
 }
 
 .globe-autorotate-btn:hover {
-  color: var(--primary-blue);
+  background: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
 }
 
 /* Globe Country Tabs */
@@ -1887,11 +1935,25 @@ a:hover {
   border: 1px solid var(--slate-200);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   transition: all 0.25s ease;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .globe-country-badge:hover {
   border-color: var(--primary-blue);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+  transform: translateY(-2px);
+}
+
+.globe-country-badge.congo:hover {
+  border-color: #059669;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.12);
+}
+
+.globe-country-badge.kenya:hover {
+  border-color: #ea580c;
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.12);
 }
 
 .globe-country-badge .flag {
@@ -2012,6 +2074,15 @@ a:hover {
   background: linear-gradient(135deg, rgba(255, 247, 237, 0.7) 0%, #ffffff 100%);
 }
 
+.presence-loc-card.is-congo.is-active::before {
+  background: #059669;
+}
+
+.presence-loc-card.is-congo.is-active {
+  border-color: #059669;
+  background: linear-gradient(135deg, rgba(236, 253, 245, 0.75) 0%, #ffffff 100%);
+}
+
 .presence-loc-card-header {
   display: flex;
   align-items: center;
@@ -2063,6 +2134,11 @@ a:hover {
 .presence-loc-tag.kinshasa {
   background: rgba(37, 99, 235, 0.1);
   color: var(--primary-blue);
+}
+
+.presence-loc-tag.brazzaville {
+  background: rgba(5, 150, 105, 0.12);
+  color: #059669;
 }
 
 .presence-loc-tag.nairobi {
@@ -2119,6 +2195,10 @@ a:hover {
 
 .presence-loc-card.is-kenya .presence-loc-focus-btn {
   color: #ea580c;
+}
+
+.presence-loc-card.is-congo .presence-loc-focus-btn {
+  color: #059669;
 }
 
 /* Responsive */

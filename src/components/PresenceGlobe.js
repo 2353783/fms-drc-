@@ -66,13 +66,28 @@ export const LOCATIONS = [
     tagEn: 'International',
     highlight: true,
   },
+  {
+    id: 'brazzaville',
+    city: 'Brazzaville',
+    country: 'Congo',
+    countryFull: 'République du Congo',
+    flag: '🇨🇬',
+    lat: -3.5,
+    lng: 14.2,
+    role: 'Bureau Régional — Afrique Centrale',
+    roleEn: 'Regional Office — Central Africa',
+    address: 'Centre d’Affaires — Brazzaville',
+    tag: 'Régional',
+    tagEn: 'Regional',
+    highlight: true,
+  },
 ];
 
 // Project lat/lng to 2D percentage coordinates on the globe
-function projectPoint(lat, lng, phi, theta) {
+function projectPoint(lat, lng, phi, theta, scale = 1.0) {
   const PI = Math.PI;
   const p = 0.05;
-  const baseR = 0.8 + p;
+  const baseR = (0.8 + p) * scale;
 
   const r = (lat * PI) / 180;
   const a = (lng * PI) / 180 - PI;
@@ -92,7 +107,8 @@ function projectPoint(lat, lng, phi, theta) {
   const y = ((-s + 1) / 2) * 100;
   const z = -aSin * rCos * pt[0] + rSin * pt[1] + aCos * rCos * pt[2];
 
-  return { x, y, z, visible: z >= 0.08 };
+  const normalizedZ = z / (scale || 1.0);
+  return { x, y, z, visible: normalizedZ >= 0.06 };
 }
 
 export default function PresenceGlobe({ lang = 'fr' }) {
@@ -100,10 +116,13 @@ export default function PresenceGlobe({ lang = 'fr' }) {
   const containerRef = useRef(null);
   const phiRef = useRef(0.2); // Start centered roughly near Africa
   const thetaRef = useRef(0.18); // Slight downward tilt for perspective
+  const scaleRef = useRef(1.0); // Globe zoom scale (1.0 default)
+  const targetScaleRef = useRef(null);
   const isDraggingRef = useRef(false);
   const dragStartRef = useRef({ x: 0, y: 0 });
   const targetPhiRef = useRef(null);
   const targetThetaRef = useRef(null);
+  const lastTouchDistRef = useRef(null);
 
   const [activeLocation, setActiveLocation] = useState('kinshasa');
   const [pinPositions, setPinPositions] = useState({});
@@ -115,18 +134,40 @@ export default function PresenceGlobe({ lang = 'fr' }) {
     setIsAutoRotating(false);
 
     // Calculate phi to bring longitude into front view (facing camera)
-    // When lng + phi_deg = 0 => phi_rad = -lng * PI / 180 + PI/2 (centered)
     const targetPhi = -(loc.lng * Math.PI) / 180 + Math.PI / 2;
     const targetTheta = (loc.lat * Math.PI) / 180 * -0.5 + 0.15;
 
     targetPhiRef.current = targetPhi;
     targetThetaRef.current = Math.max(-0.4, Math.min(0.5, targetTheta));
+    // Gentle focus zoom
+    targetScaleRef.current = 1.15;
+  }, []);
+
+  // Zoom control helpers
+  const zoomIn = useCallback(() => {
+    setIsAutoRotating(false);
+    const cur = targetScaleRef.current ?? scaleRef.current;
+    targetScaleRef.current = Math.min(2.1, cur + 0.25);
+  }, []);
+
+  const zoomOut = useCallback(() => {
+    setIsAutoRotating(false);
+    const cur = targetScaleRef.current ?? scaleRef.current;
+    targetScaleRef.current = Math.max(0.65, cur - 0.25);
+  }, []);
+
+  const resetView = useCallback(() => {
+    targetScaleRef.current = 1.0;
+    targetPhiRef.current = 0.2;
+    targetThetaRef.current = 0.18;
+    setIsAutoRotating(true);
   }, []);
 
   useEffect(() => {
     let globe;
     let animationFrameId;
     const canvas = canvasRef.current;
+    const container = containerRef.current;
     if (!canvas) return;
 
     let width = 0;
@@ -141,15 +182,24 @@ export default function PresenceGlobe({ lang = 'fr' }) {
     const markers = LOCATIONS.map((loc) => ({
       location: [loc.lat, loc.lng],
       size: loc.id === 'kinshasa' ? 0.09 : 0.075,
-      color: loc.id === 'nairobi' ? [0.95, 0.45, 0.15] : [0.15, 0.45, 0.95],
+      color:
+        loc.id === 'nairobi'
+          ? [0.95, 0.45, 0.15]
+          : loc.id === 'brazzaville'
+          ? [0.05, 0.68, 0.45]
+          : [0.15, 0.45, 0.95],
     }));
 
     // Interconnecting arcs between FMS offices
     const arcs = [
+      // Kinshasa <-> Brazzaville (Twin capitals across the Congo River)
+      { from: [-4.4419, 15.2663], to: [-3.5, 14.2], color: [0.05, 0.68, 0.45] },
       // Kinshasa <-> Nairobi
       { from: [-4.4419, 15.2663], to: [-1.2921, 36.8219], color: [0.2, 0.55, 0.95] },
       // Kinshasa <-> Lubumbashi
       { from: [-4.4419, 15.2663], to: [-11.6876, 27.5026], color: [0.15, 0.45, 0.95] },
+      // Brazzaville <-> Nairobi
+      { from: [-3.5, 14.2], to: [-1.2921, 36.8219], color: [0.1, 0.65, 0.55] },
       // Lubumbashi <-> Kolwezi
       { from: [-11.6876, 27.5026], to: [-10.7167, 25.4667], color: [0.2, 0.6, 1.0] },
       // Nairobi <-> Lubumbashi
@@ -170,7 +220,7 @@ export default function PresenceGlobe({ lang = 'fr' }) {
         baseColor: [0.92, 0.95, 0.98],
         markerColor: [0.12, 0.45, 0.95],
         glowColor: [0.85, 0.92, 1.0],
-        scale: 1,
+        scale: scaleRef.current,
         offset: [0, 0],
         markers,
         arcs,
@@ -183,6 +233,19 @@ export default function PresenceGlobe({ lang = 'fr' }) {
     } catch (e) {
       console.error('Failed to init globe:', e);
       return;
+    }
+
+    // Wheel zoom on canvas with preventDefault (non-passive)
+    const handleWheel = (e) => {
+      e.preventDefault();
+      const delta = -e.deltaY * 0.0016;
+      const cur = targetScaleRef.current ?? scaleRef.current;
+      const next = Math.max(0.65, Math.min(2.1, cur + delta));
+      targetScaleRef.current = next;
+    };
+
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
     }
 
     // Animation loop
@@ -215,16 +278,34 @@ export default function PresenceGlobe({ lang = 'fr' }) {
         }
       }
 
+      // Smooth zoom transition if target is set
+      if (targetScaleRef.current !== null) {
+        const diffS = targetScaleRef.current - scaleRef.current;
+        if (Math.abs(diffS) > 0.004) {
+          scaleRef.current += diffS * 0.15;
+        } else {
+          scaleRef.current = targetScaleRef.current;
+          targetScaleRef.current = null;
+        }
+      }
+
       // Update globe state
       globe.update({
         phi: phiRef.current,
         theta: thetaRef.current,
+        scale: scaleRef.current,
       });
 
       // Compute 2D screen positions for all logo pins
       const positions = {};
       LOCATIONS.forEach((loc) => {
-        positions[loc.id] = projectPoint(loc.lat, loc.lng, phiRef.current, thetaRef.current);
+        positions[loc.id] = projectPoint(
+          loc.lat,
+          loc.lng,
+          phiRef.current,
+          thetaRef.current,
+          scaleRef.current
+        );
       });
       setPinPositions(positions);
 
@@ -246,6 +327,9 @@ export default function PresenceGlobe({ lang = 'fr' }) {
     window.addEventListener('resize', handleResize);
 
     return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
       window.removeEventListener('resize', handleResize);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
       if (globe) globe.destroy();
@@ -275,6 +359,34 @@ export default function PresenceGlobe({ lang = 'fr' }) {
     isDraggingRef.current = false;
   };
 
+  // Touch pinch-to-zoom gestures
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 2) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      lastTouchDistRef.current = dist;
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (e.touches.length === 2 && lastTouchDistRef.current) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const factor = dist / lastTouchDistRef.current;
+      lastTouchDistRef.current = dist;
+      const cur = targetScaleRef.current ?? scaleRef.current;
+      targetScaleRef.current = Math.max(0.65, Math.min(2.1, cur * factor));
+    }
+  };
+
+  const handleTouchEnd = () => {
+    lastTouchDistRef.current = null;
+  };
+
   return (
     <div className="presence-globe-layout">
       {/* 3D Globe Visual Container */}
@@ -286,8 +398,11 @@ export default function PresenceGlobe({ lang = 'fr' }) {
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerLeave={handlePointerUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           style={{ cursor: isDraggingRef.current ? 'grabbing' : 'grab' }}
-          title={lang === 'fr' ? 'Cliquez et glissez pour faire tourner le globe' : 'Click and drag to rotate the globe'}
+          title={lang === 'fr' ? 'Glissez pour tourner • Molette ou boutons pour zoomer' : 'Drag to rotate • Scroll or buttons to zoom'}
         >
           {/* Subtle Ambient Glow behind globe */}
           <div className="globe-ambient-glow" />
@@ -352,37 +467,95 @@ export default function PresenceGlobe({ lang = 'fr' }) {
             );
           })}
 
-          {/* Interactive hints overlay */}
+          {/* Interactive hints & zoom controls overlay */}
           <div className="globe-hint-pill">
             <span className="globe-hint-dot" />
-            <span>
+            <span className="globe-hint-caption">
               {lang === 'fr'
-                ? 'Globe 3D interactif • Glissez pour explorer'
-                : 'Interactive 3D Globe • Drag to explore'}
+                ? 'Globe 3D interactif • Glissez & Molette'
+                : 'Interactive 3D Globe • Drag & Scroll'}
             </span>
-            <button
-              type="button"
-              className="globe-autorotate-btn"
-              onClick={() => setIsAutoRotating(!isAutoRotating)}
-              title={isAutoRotating ? 'Pause rotation' : 'Reprendre la rotation'}
-            >
-              {isAutoRotating ? '⏸' : '▶'}
-            </button>
+
+            {/* Controls: Zoom In, Zoom Out, Reset, Pause/Play */}
+            <div className="globe-controls-group">
+              <button
+                type="button"
+                className="globe-ctrl-btn"
+                onClick={zoomIn}
+                title={lang === 'fr' ? 'Zoomer (+)' : 'Zoom in (+)'}
+                aria-label="Zoom in"
+              >
+                +
+              </button>
+              <button
+                type="button"
+                className="globe-ctrl-btn"
+                onClick={zoomOut}
+                title={lang === 'fr' ? 'Dézoomer (−)' : 'Zoom out (−)'}
+                aria-label="Zoom out"
+              >
+                −
+              </button>
+              <button
+                type="button"
+                className="globe-ctrl-btn"
+                onClick={resetView}
+                title={lang === 'fr' ? 'Réinitialiser la vue' : 'Reset view'}
+                aria-label="Reset view"
+              >
+                ↺
+              </button>
+              <button
+                type="button"
+                className="globe-autorotate-btn"
+                onClick={() => setIsAutoRotating(!isAutoRotating)}
+                title={isAutoRotating ? 'Pause rotation' : 'Reprendre la rotation'}
+                aria-label="Toggle auto rotation"
+              >
+                {isAutoRotating ? '⏸' : '▶'}
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Quick Country Pills */}
+        {/* Quick Country Pills: RDC, Kenya, then Congo-Brazzaville */}
         <div className="globe-country-tabs">
-          <div className="globe-country-badge rdc">
+          <button
+            type="button"
+            className="globe-country-badge rdc"
+            onClick={() => focusLocation(LOCATIONS[0])}
+            title={lang === 'fr' ? 'Centrer sur la RDC' : 'Focus on DRC'}
+          >
             <span className="flag">🇨🇩</span>
             <span className="country-title">RDC</span>
             <span className="country-sub">Kinshasa • Lubumbashi • Kolwezi</span>
-          </div>
-          <div className="globe-country-badge kenya">
+          </button>
+          <button
+            type="button"
+            className="globe-country-badge kenya"
+            onClick={() => {
+              const nb = LOCATIONS.find((l) => l.id === 'nairobi');
+              if (nb) focusLocation(nb);
+            }}
+            title={lang === 'fr' ? 'Centrer sur le Kenya' : 'Focus on Kenya'}
+          >
             <span className="flag">🇰🇪</span>
             <span className="country-title">Kenya</span>
             <span className="country-sub">Nairobi</span>
-          </div>
+          </button>
+          <button
+            type="button"
+            className="globe-country-badge congo"
+            onClick={() => {
+              const bz = LOCATIONS.find((l) => l.id === 'brazzaville');
+              if (bz) focusLocation(bz);
+            }}
+            title={lang === 'fr' ? 'Centrer sur le Congo' : 'Focus on Congo'}
+          >
+            <span className="flag">🇨🇬</span>
+            <span className="country-title">Congo</span>
+            <span className="country-sub">Brazzaville</span>
+          </button>
         </div>
       </div>
 
@@ -394,14 +567,14 @@ export default function PresenceGlobe({ lang = 'fr' }) {
             {lang === 'fr' ? 'Implantations Stratégiques' : 'Strategic Hubs'}
           </span>
           <span className="presence-count-pill">
-            {lang === 'fr' ? '2 Pays • 4 Hubs' : '2 Countries • 4 Hubs'}
+            {lang === 'fr' ? '3 Pays • 5 Hubs' : '3 Countries • 5 Hubs'}
           </span>
         </div>
 
         <p className="presence-intro-text">
           {lang === 'fr'
-            ? "FMS déploie ses services de conseil RH, fiscalité, comptabilité et accompagnement d'entreprises à travers la RDC et en Afrique de l'Est via notre bureau au Kenya."
-            : 'FMS provides specialized HR, tax, accounting, and advisory solutions across the DRC and in East Africa through our Kenya regional office.'}
+            ? "FMS déploie ses services de conseil RH, fiscalité, comptabilité et accompagnement d'entreprises en RDC, en République du Congo (Brazzaville) et au Kenya."
+            : 'FMS provides specialized HR, tax, accounting, and advisory solutions across the DRC, the Republic of the Congo (Brazzaville), and Kenya.'}
         </p>
 
         {/* Location cards */}
@@ -412,7 +585,7 @@ export default function PresenceGlobe({ lang = 'fr' }) {
               <div
                 key={loc.id}
                 className={`presence-loc-card ${isActive ? 'is-active' : ''} ${
-                  loc.country === 'Kenya' ? 'is-kenya' : ''
+                  loc.country === 'Kenya' ? 'is-kenya' : loc.id === 'brazzaville' ? 'is-congo' : ''
                 }`}
                 onClick={() => focusLocation(loc)}
               >
