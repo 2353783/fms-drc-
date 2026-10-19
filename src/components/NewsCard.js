@@ -40,29 +40,47 @@ export default function NewsCard({ news }) {
                 overflow: 'hidden'
             }}>
                 {/* Blurred backdrop to fill gaps elegantly */}
-                <div style={{
-                    position: 'absolute',
-                    inset: '-20px',
-                    backgroundImage: `url(${image || '/images/hr.png'})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'blur(30px) brightness(0.9)',
-                    opacity: 0.4
-                }}></div>
+                {!image?.toLowerCase().endsWith('.pdf') ? (
+                    <>
+                        <div style={{
+                            position: 'absolute',
+                            inset: '-20px',
+                            backgroundImage: `url(${image || '/images/hr.png'})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            filter: 'blur(30px) brightness(0.9)',
+                            opacity: 0.4
+                        }}></div>
 
-                {/* Main image - fully visible */}
-                <img
-                    src={image || '/images/hr.png'}
-                    alt={displayTitle}
-                    style={{
-                        position: 'relative',
-                        maxHeight: '100%',
-                        maxWidth: '100%',
-                        objectFit: 'contain',
-                        zIndex: 1,
-                        boxShadow: '0 15px 35px rgba(0,0,0,0.15)'
-                    }}
-                />
+                        {/* Main image - fully visible */}
+                        <img
+                            src={image || '/images/hr.png'}
+                            alt={displayTitle}
+                            style={{
+                                position: 'relative',
+                                maxHeight: '100%',
+                                maxWidth: '100%',
+                                objectFit: 'contain',
+                                zIndex: 1,
+                                boxShadow: '0 15px 35px rgba(0,0,0,0.15)'
+                            }}
+                        />
+                    </>
+                ) : (
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'var(--primary-blue)',
+                        padding: '2rem',
+                        textAlign: 'center'
+                    }}>
+                        <span style={{ fontSize: '4rem', marginBottom: '1rem' }}>📄</span>
+                        <span style={{ fontWeight: '700', fontSize: '1.1rem', color: 'var(--slate-800)' }}>Document PDF</span>
+                        <span style={{ fontSize: '0.85rem', color: 'var(--slate-500)', marginTop: '0.25rem' }}>Cliquer pour consulter</span>
+                    </div>
+                )}
             </div>
             <div style={{ padding: '1.5rem' }}>
                 <span style={{

@@ -385,9 +385,13 @@ export default function AdminPage() {
                                         ) : (
                                             <td style={{ padding: '1rem' }}>
                                                 {item.image ? (
-                                                    <img src={item.image} alt="" style={{ width: '48px', height: '48px', borderRadius: '6px', objectFit: 'cover', background: '#f8fafc', border: '1px solid var(--slate-200)' }} />
+                                                    item.image.toLowerCase().endsWith('.pdf') ? (
+                                                        <span style={{ fontSize: '1.4rem' }} title="Document PDF joint">📄 PDF</span>
+                                                    ) : (
+                                                        <img src={item.image} alt="" style={{ width: '48px', height: '48px', borderRadius: '6px', objectFit: 'cover', background: '#f8fafc', border: '1px solid var(--slate-200)' }} />
+                                                    )
                                                 ) : (
-                                                    <span style={{ color: 'var(--slate-400)', fontSize: '0.8rem' }}>Aucune image</span>
+                                                    <span style={{ color: 'var(--slate-400)', fontSize: '0.8rem' }}>Aucun fichier</span>
                                                 )}
                                             </td>
                                         )}
@@ -479,34 +483,34 @@ export default function AdminPage() {
                         </div>
                     </div>
 
-                    {/* Images ONLY for Trainings and News (NOT for Jobs) */}
+                    {/* Images & Documents for Trainings and News (NOT for Jobs) */}
                     {activeTab !== 'jobs' && (
                         <div className="form-group" style={{ marginBottom: '1rem' }}>
                             <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: '600' }}>
-                                Image ({activeTab === 'trainings' ? 'Affiche de la formation' : "Image de l'actualité"})
+                                {activeTab === 'trainings' ? 'Image / Affiche de la formation' : "Image ou Document de l'actualité (Image ou PDF)"}
                             </label>
                             <div style={{ display: 'flex', gap: '0.5rem' }}>
                                 <input
                                     type="text"
-                                    placeholder="/uploads/... ou /images/..."
+                                    placeholder="https://firebasestorage... ou /uploads/..."
                                     value={formData.image || ''}
                                     onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                                     style={{ flex: 1, padding: '0.65rem 0.85rem', borderRadius: '0.5rem', border: '1px solid var(--slate-300)' }}
                                 />
                                 <div style={{ position: 'relative' }}>
                                     <button type="button" className="btn btn-secondary" style={{ whiteSpace: 'nowrap', padding: '0.65rem 1rem' }}>
-                                        📁 Importer image
+                                        📁 Importer fichier
                                     </button>
                                     <input
                                         type="file"
-                                        accept="image/*"
+                                        accept="image/*,application/pdf"
                                         onChange={async (e) => {
                                             const file = e.target.files[0];
                                             if (!file) return;
 
                                             const uploadBtn = e.target.previousSibling;
                                             const originalText = uploadBtn.innerText;
-                                            uploadBtn.innerText = '⌛ Envoi...';
+                                            uploadBtn.innerText = '⌛ Envoi Firebase...';
 
                                             const uploadData = new FormData();
                                             uploadData.append('file', file);
@@ -519,10 +523,10 @@ export default function AdminPage() {
                                                 const data = await res.json();
                                                 if (data.success) {
                                                     setFormData({ ...formData, image: data.url });
-                                                    uploadBtn.innerText = '✅ OK';
-                                                    setTimeout(() => uploadBtn.innerText = originalText, 2000);
+                                                    uploadBtn.innerText = data.storage === 'firebase' ? '🔥 Firebase OK' : '✅ Sauvegardé';
+                                                    setTimeout(() => uploadBtn.innerText = originalText, 2500);
                                                 } else {
-                                                    alert("Erreur lors de l'upload de l'image");
+                                                    alert("Erreur lors de l'upload du fichier");
                                                     uploadBtn.innerText = '❌ Erreur';
                                                     setTimeout(() => uploadBtn.innerText = originalText, 2000);
                                                 }
