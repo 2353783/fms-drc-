@@ -1,0 +1,10 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Permet la lecture et l'upload des images et documents du site
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}

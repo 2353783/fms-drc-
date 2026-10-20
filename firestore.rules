@@ -1,0 +1,15 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Lecture et écriture autorisées pour le contenu du site (offres, formations, actualités)
+    match /content/{document=**} {
+      allow read, write: if true;
+    }
+    
+    // Règle générale
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

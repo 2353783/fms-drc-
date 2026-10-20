@@ -520,18 +520,21 @@ export default function AdminPage() {
                                                     method: 'POST',
                                                     body: uploadData
                                                 });
-                                                const data = await res.json();
-                                                if (data.success) {
+                                                const data = await res.json().catch(() => null);
+
+                                                if (res.ok && data?.success) {
                                                     setFormData({ ...formData, image: data.url });
                                                     uploadBtn.innerText = data.storage === 'firebase' ? '🔥 Firebase OK' : '✅ Sauvegardé';
                                                     setTimeout(() => uploadBtn.innerText = originalText, 2500);
                                                 } else {
-                                                    alert("Erreur lors de l'upload du fichier");
+                                                    const errMsg = data?.error || `Erreur serveur (${res.status})`;
+                                                    alert("Erreur lors de l'upload du fichier : " + errMsg);
                                                     uploadBtn.innerText = '❌ Erreur';
                                                     setTimeout(() => uploadBtn.innerText = originalText, 2000);
                                                 }
                                             } catch (err) {
-                                                alert('Erreur réseau lors de l\'upload');
+                                                console.error('Erreur upload:', err);
+                                                alert("Erreur lors de l'envoi : " + (err.message || 'Problème réseau'));
                                                 uploadBtn.innerText = '❌ Erreur';
                                                 setTimeout(() => uploadBtn.innerText = originalText, 2000);
                                             }

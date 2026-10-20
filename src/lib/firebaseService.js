@@ -1,4 +1,4 @@
-import { db, storage } from './firebase';
+import { db, storage } from './firebase.js';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import offersFallback from '../data/offers.json';
